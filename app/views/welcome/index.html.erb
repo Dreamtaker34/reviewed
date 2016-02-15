@@ -7,9 +7,17 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-5">
-      <h3 class="text-center">Start making a list of what you have seen!</h3>
-      <p><center><%= link_to "Get Started.", root_path, class: 'btn btn-success' %></center></p>
+    <div class="col-sm-4">
+      <% if user_signed_in? %>
+        <h3 class="text-left">Latest Reviews</h3>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+        </ul>
+      <% else %>
+        <h3 class="text-center">Start making a list of what you have seen!</h3>
+        <p><center><%= link_to "Get Started.", root_path, class: 'btn btn-success' %></center></p>
+      <% end %>
     </div>
     <div class="col-sm-2">
     </div>
