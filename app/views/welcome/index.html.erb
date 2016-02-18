@@ -19,6 +19,20 @@
         <p><center><%= link_to "Get Started.", root_path, class: 'btn btn-success' %></center></p>
       <% end %>
     </div>
+    <form method='post' data-remote='true'>
+      <input name='_method' type='hidden' value='patch' />
+    </form>
+
+    <%= form_tag({:action => "search"}, {:method => "get"}) do %>
+      <%= text_field_tag :q %>
+      <%= submit_tag "Search" %>
+    <% end %>
+
+    <% @movies.each do | m | %>
+      <p> <%= m.title %> </p>
+      <p> <%= m.overview %> </p>
+    <% end %>
+
     <div class="col-sm-2">
     </div>
   </div>
