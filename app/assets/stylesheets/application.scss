@@ -16,3 +16,138 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar {
+  border-radius: 0px;
+  background-color: #0A323F;
+  -webkit-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
+  -moz-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
+  box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
+}
+body {
+  background-color: #666A73;
+}
+
+h1 {
+  color: #2E353D;
+}
+
+a {
+  color: #BAC5E0;
+}
+
+// Jumbotron
+.jumbotron {
+  color: #BAC5E0;
+  border-radius: 0px;
+  border: 5px solid #0A323F;
+  background-color: #2E353D;
+  -webkit-box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
+  -moz-box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
+  box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
+}
+
+// Search Bar
+#search_box {
+  margin: auto;
+  margin-bottom: 10px;
+  input[type="text"], textarea {
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    font-size: 12pt;
+    background-color : #666A73;
+    border: 0px;
+    border-color: #0A323F;
+    -webkit-box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
+    -moz-box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
+    box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
+
+}
+}
+
+#search_btn .btn-info {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 0px;
+}
+
+/* Info Cards */
+/* Colors */
+.card {
+  position: relative;
+  margin-top: 20px;
+  height: 239px;
+  width: 300px;
+  background-color: #2E353D;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 21px 1px rgba(5,5,5,0.4);
+  -moz-box-shadow: 0px 0px 21px 1px rgba(5,5,5,0.4);
+  box-shadow: 0px 0px 21px 1px rgba(5,5,5,0.4);
+}
+
+.header {
+  margin-bottom: 4px;
+  padding: 8px;
+  height: 35px;
+  width: 300px;
+  background-color: #0A323F;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
+  -moz-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
+  box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
+}
+
+.header h4 {
+  margin-top: 0;
+  height: inherit;
+  color: #BAC5E0;
+  overflow: hidden;
+}
+
+.thumb {
+  float: left;
+  width: 35%;
+  height: 100%;
+}
+
+.thumb img {
+  opacity: 0.75;
+  width: 100px;
+  height: 150px;
+}
+
+#addit {
+  width: 35%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+
+  .btn-info {
+    border-radius: 0px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-left: 13px;
+    margin-bottom: 8px;
+
+  }
+}
+
+#year {
+  color: #BAC5E0;
+  font-size: 10pt;
+  text-align: center;
+}
+
+.info {
+  color: #BAC5E0;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  float: right;
+  height: 200px;
+  width: 65%;
+  overflow: hidden;
+}

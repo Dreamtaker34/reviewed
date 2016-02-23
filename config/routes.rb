@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'welcome/search' => 'welcome#search'
 
+  get 'welcome/tv_search' => 'welcome#tv_search'
+
   get 'welcome/index'
 
   root 'welcome#index'
