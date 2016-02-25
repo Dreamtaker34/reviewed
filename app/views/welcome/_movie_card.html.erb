@@ -1,0 +1,31 @@
+<% if movie.title %>
+  <div class="col-sm-4">
+    <div class="container">
+      <div class="card">
+        <div class="header">
+          <h4><%= truncate(movie.title, :length => 30) %> </h4>
+        </div>
+        <div class="thumb">
+          <% if movie.poster_path.blank? %>
+            <%= image_tag "no_poster.png" %>
+          <% else %>
+            <img src="http://image.tmdb.org/t/p/w342<%= movie.poster_path %>">
+          <% end %>
+        <div id="year">
+          (<%= movie.release_date[0 .. 3] %>)
+        </div>
+        <div id="addit">
+          <%= link_to "Make Note", root_path, class: 'btn btn-info btn-sm' %>
+        </div>
+        </div>
+        <div class="info">
+        <p><%= truncate(movie.overview, :length => 265, :separator => '.') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="container">
+    <h3>No matches found. Please try again.<h3>
+  </div>
+<% end %>

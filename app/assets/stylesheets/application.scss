@@ -38,7 +38,7 @@ a {
 
 // Jumbotron
 .jumbotron {
-  color: #BAC5E0;
+  color: #898E8F;
   border-radius: 0px;
   border: 5px solid #0A323F;
   background-color: #2E353D;
@@ -53,9 +53,10 @@ a {
   margin-bottom: 10px;
   input[type="text"], textarea {
     height: 30px;
-    width: 300px;
+    width: 280px;
     text-align: center;
     font-size: 12pt;
+    color: #BAC5E0;
     background-color : #666A73;
     border: 0px;
     border-color: #0A323F;
@@ -67,6 +68,9 @@ a {
 }
 
 #search_btn .btn-info {
+  color: #898E8F;
+  border: 2px solid #898E8F;
+  background-color: #0A323F;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 0px;
@@ -100,14 +104,14 @@ a {
 
 .header h4 {
   margin-top: 0;
-  height: inherit;
+  height: 20px;
   color: #BAC5E0;
   overflow: hidden;
 }
 
 .thumb {
   float: left;
-  width: 35%;
+  width: 34%;
   height: 100%;
 }
 
@@ -118,34 +122,37 @@ a {
 }
 
 #addit {
-  width: 35%;
+  width: 34%;
   position: absolute;
   bottom: 0px;
   left: 0px;
 
   .btn-info {
+    color: #898E8F;
+    background-color: #0A323F;
+    border: 1px solid #898E8F;
     border-radius: 0px;
     padding-top: 1px;
     padding-bottom: 1px;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-left: 13px;
-    margin-bottom: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
 
   }
 }
 
 #year {
-  color: #BAC5E0;
+  color: #898E8F;
   font-size: 10pt;
   text-align: center;
 }
 
 .info {
-  color: #BAC5E0;
+  color: #898E8F;
   padding-right: 5px;
   padding-bottom: 5px;
-  padding-left: 5px;
+  padding-left: 1px;
   float: right;
   height: 200px;
   width: 65%;

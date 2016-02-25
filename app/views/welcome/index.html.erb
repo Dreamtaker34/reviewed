@@ -49,15 +49,14 @@
     <% if @shows.nil? %>
     <% else %>
       <% @shows.each do |s| %>
-        <%= s.name %>
-        <%= s.overview %>
+        <%= render partial: 'welcome/show_card', locals: {show: s} %>
       <% end %>
     <% end %>
 
     <% if @movies.nil? %>
     <% else %>
       <% @movies.each do | m | %>
-        <%= render partial: 'welcome/card', locals: {movie: m} %>
+        <%= render partial: 'welcome/movie_card', locals: {movie: m} %>
       <% end %>
     <% end %>
 
