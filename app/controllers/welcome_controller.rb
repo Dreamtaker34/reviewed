@@ -4,6 +4,14 @@ class WelcomeController < ApplicationController
     @shows = []
   end
 
+  def show
+    Tmdb::Api.key(ENV["movie_db_key"])
+    @movie = Tmdb::Movie.detail(params[:id])
+
+    render :show
+
+  end
+
   def search
 
     Tmdb::Api.key(ENV["movie_db_key"])

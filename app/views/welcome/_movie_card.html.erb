@@ -1,9 +1,9 @@
-<% if movie.title %>
+<% if !movie.blank? %>
   <div class="col-sm-4">
     <div class="container">
       <div class="card">
         <div class="header">
-          <h4><%= truncate(movie.title, :length => 30) %> </h4>
+          <h4><%= link_to "#{ truncate(movie.title, :length => 30) }", controller: "welcome", action: "show", id: movie.id %></h4>
         </div>
         <div class="thumb">
           <% if movie.poster_path.blank? %>
@@ -11,15 +11,21 @@
           <% else %>
             <img src="http://image.tmdb.org/t/p/w342<%= movie.poster_path %>">
           <% end %>
-        <div id="year">
-          (<%= movie.release_date[0 .. 3] %>)
-        </div>
+        <% unless movie.release_date.blank? %>
+          <div id="year">
+            (<%= movie.release_date[0 .. 3] %>)
+          </div>
+        <% end %>
         <div id="addit">
-          <%= link_to "Make Note", root_path, class: 'btn btn-info btn-sm' %>
+          <%= link_to "Make Note", welcome_show_path, class: 'btn btn-info btn-sm' %>
         </div>
         </div>
         <div class="info">
-        <p><%= truncate(movie.overview, :length => 265, :separator => '.') %></p>
+          <% if movie.overview.blank? %>
+            <p>Currently there is no description.<p/>
+          <% else %>
+            <p><%= truncate(movie.overview, :length => 265, :separator => '.') %></p>
+          <% end %>
         </div>
       </div>
     </div>
