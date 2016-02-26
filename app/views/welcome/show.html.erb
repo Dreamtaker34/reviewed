@@ -1,4 +1,1 @@
-<div class="container">
-  <p><%= @movie['title'] %></p>
-  <p><%= @movie['overview'] %></p>
-</div>
+<%= render partial: 'welcome/movie_details', locals: {movie: @movie} %>

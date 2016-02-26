@@ -90,7 +90,7 @@ a {
   box-shadow: 0px 0px 21px 1px rgba(5,5,5,0.4);
 }
 
-.header {
+.card_header {
   margin-bottom: 4px;
   padding: 8px;
   height: 35px;
@@ -102,7 +102,7 @@ a {
   box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
 }
 
-.header h4 {
+.card_header h4 {
   margin-top: 0;
   height: 20px;
   color: #BAC5E0;
@@ -160,4 +160,67 @@ a {
   height: 200px;
   width: 65%;
   overflow: hidden;
+}
+
+// Detail Page
+.details {
+  background-color: #2E353D;
+  height: auto;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 21px 1px rgba(5,5,5,0.4);
+  -moz-box-shadow: 0px 0px 21px 1px rgba(5,5,5,0.4);
+  box-shadow: 0px 0px 21px 1px rgba(5,5,5,0.4);
+}
+
+.details_header {
+  clear: right;
+  min-height: 30px;
+  background-color: #0A323F;
+  -webkit-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
+  -moz-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
+  box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
+
+  h3 {
+    color: #BAC5E0;
+    padding: 6px;
+    min-width: 200px;
+  }
+
+  #header_year {
+    font-size: 16px;
+    margin: 8px;
+    color: #898E8F;
+  }
+}
+
+.poster {
+  float:left;
+  width: inherit;
+
+  img {
+    opacity: 0.75;
+    width: 200px;
+    height: auto;
+  }
+}
+
+.details_left {
+  height: auto;
+  width: 30%;
+}
+
+.details_info {
+  color: #898E8F;
+  font-size: 16px;
+  width: 70%;
+  float:right;
+}
+
+#tagline {
+  color: #BAC5E0;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  width: 30%;
+  clear: left;
 }
