@@ -53,11 +53,25 @@
       <% end %>
     <% end %>
 
-    <% if @movies.nil? %>
-    <% else %>
-      <% @movies.each do | m | %>
-        <%= render partial: 'welcome/movie_card', locals: {movie: m} %>
-      <% end %>
+    <br/><br/><br/>
+    <%= select("filter", "category", [["All", 0], ["Movies", 1], ["TV Shows", 2]], {}, onChange: "javascript: onChange(event);") %>
+
+    <% if @movies %>
+      <div id="movies" class="row">
+        <h3>Movies</h3>
+        <% @movies.each do | m | %>
+          <%= render partial: 'welcome/movie_card', locals: {movie: m} %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if @tv_shows %>
+      <div id="tv-shows" class="row">
+        <h3>TV shows </h3>
+        <% @tv_shows.each do |s| %>
+          <%= render partial: 'welcome/show_card', locals: {show: s} %>
+        <% end %>
+      </div>
     <% end %>
 
     <div class="col-sm-2">

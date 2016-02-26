@@ -16,6 +16,7 @@ class WelcomeController < ApplicationController
 
     Tmdb::Api.key(ENV["movie_db_key"])
     @movies = Tmdb::Movie.find(params[:q])
+    @tv_shows = Tmdb::TV.find(params[:q])
 
     render :index
 
