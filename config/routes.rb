@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  get 'welcome/show', :path => 'show'
+  get 'welcome/movie', :path => 'movie'
+
+  get 'welcome/tvshow', :path => 'tvshow'
 
   root 'welcome#index'
 

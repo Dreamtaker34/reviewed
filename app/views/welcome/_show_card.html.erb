@@ -3,7 +3,7 @@
     <div class="container">
       <div class="card">
         <div class="card_header">
-          <h4><%= truncate(show.name, :length => 30) %> </h4>
+          <h4><%= link_to "#{ truncate(show.name, :length => 30) }", controller: "welcome", action: "tvshow", id: show.id %></h4>
         </div>
         <div class="thumb">
           <% if show.poster_path.blank? %>
@@ -17,7 +17,7 @@
           </div>
         <% end %>
         <div id="addit">
-          <%= link_to "Make Note", welcome_show_path, class: 'btn btn-info btn-sm' %>
+          <%= link_to "Make Note", welcome_tvshow_path, class: 'btn btn-info btn-sm' %>
         </div>
         </div>
         <div class="info">

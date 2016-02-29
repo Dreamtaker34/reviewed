@@ -186,6 +186,9 @@ a {
     min-width: 200px;
   }
 
+  h4 {
+    color: #BAC5E0;
+  }
   #header_year {
     font-size: 16px;
     margin: 8px;
@@ -195,16 +198,16 @@ a {
 
 .poster {
   float:left;
-  width: inherit;
 
   img {
     opacity: 0.75;
-    width: 200px;
-    height: auto;
+    width: 100%;
+    height: 100%;
   }
 }
 
 .details_left {
+  float: left;
   height: auto;
   width: 30%;
 }
@@ -212,8 +215,25 @@ a {
 .details_info {
   color: #898E8F;
   font-size: 16px;
+  padding-left: 0px;
+  padding-right: 25px;
+  margin-bottom: 10px;
   width: 70%;
   float:right;
+
+  .more_info {
+    font-size: 14px;
+    border-top: 2px solid #898E8F;
+    border-bottom: 2px solid #898E8F;
+    padding-top: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+
+    .label {
+      color: #898E8F;
+      background-color: #0A323F;
+    }
+  }
 }
 
 #tagline {
@@ -221,6 +241,26 @@ a {
   text-align: center;
   font-size: 18px;
   font-style: italic;
-  width: 30%;
   clear: left;
+}
+
+// Note Section
+
+.note {
+  color: #898E8F;
+}
+
+note {
+  .btn-info {
+    font-size: 18px;
+    border: 1px solid #898E8F;
+    border-radius: 0px;
+    padding-top: px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

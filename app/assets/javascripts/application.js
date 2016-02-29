@@ -52,3 +52,9 @@ onChange = function(event){
   console.log(categories);
   // $(`#${value}`).
 };
+
+$(document).ready(function(){
+    $("note").click(function(){
+        $(".note").slideToggle(500);
+    });
+});
