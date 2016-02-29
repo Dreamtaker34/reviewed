@@ -244,6 +244,11 @@ a {
   clear: left;
 }
 
+#drop_shadow {
+  -webkit-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
+  -moz-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
+  box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
+}
 // Note Section
 
 .note {

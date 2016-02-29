@@ -69,7 +69,7 @@
       <div id="tv-shows" class="row">
         <h3>TV shows </h3>
         <% @tv_shows.each do |s| %>
-          <%= render partial: 'welcome/show_card', locals: {show: s} %>
+          <%= render partial: 'welcome/tvshow_card', locals: {show: s} %>
         <% end %>
       </div>
     <% end %>
