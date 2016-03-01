@@ -53,8 +53,10 @@ onChange = function(event){
   // $(`#${value}`).
 };
 
-$(document).ready(function(){
-    $("note").click(function(){
-        $(".note").slideToggle(500);
-    });
-});
+var openNoteField = () => {
+  $(".note").slideToggle(500);
+};
+
+// $(document).ready(() => {
+//     $(".note-field").click(openNoteField);
+// });
