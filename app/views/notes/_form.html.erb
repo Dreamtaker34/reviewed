@@ -23,6 +23,19 @@
     <div class="form-group">
       <%= f.check_box :public %> Make this a public note?
     </div>
+
+    <% if @movie.present? %>
+      <%= @movie['id'] %>
+      <%= f.hidden_field :movie_id, value: @movie['id'] %>
+    <% end %>
+
+    <% if @tvshow.present? %>
+      <%= @tvshow['id'] %>
+      <%= f.hidden_field :tvshow_id, value: @tvshow['id'] %>
+    <% end %>
+
+
+
     <div class="form-group">
       <%= f.submit "Save Note", class: 'btn btn-success' %>
     </div>

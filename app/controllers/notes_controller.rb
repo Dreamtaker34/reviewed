@@ -4,6 +4,10 @@ class NotesController < ApplicationController
     @note = Note.new
   end
 
+  def show
+    @note = Note.find(params[:id])
+  end
+
   def create
     @note = Note.new
     @note.user = current_user
@@ -15,7 +19,7 @@ class NotesController < ApplicationController
   end
 
   def edit
-
+    @note = Note.find(params[:id])
   end
 
   def update
@@ -29,6 +33,6 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:body, :progress, :rating, :completed, :date_completed, :public)
+    params.require(:note).permit(:body, :progress, :rating, :completed, :date_completed, :public, :movie_id, :tvshow_id)
   end
 end

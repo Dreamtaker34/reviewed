@@ -31,7 +31,7 @@
         <div class="note" style="display:none">
           <%= render partial: 'notes/form', locals: {note: @note} %>
         </div>
-        <span class="note-field"><%= link_to "Make Note", '#', class: 'btn btn-info btn-xl note-field', onClick:"javascript: openNoteField();" %></span>
+        <span class="note-field"><%= link_to "#{@note.new_record? ? 'Make' : 'Edit'} Note", '#', class: 'btn btn-info btn-xl note-field', onClick:"javascript: openNoteField();" %></span>
       </div>
       <% end %>
     </div>

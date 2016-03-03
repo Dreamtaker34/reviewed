@@ -8,8 +8,8 @@ class WelcomeController < ApplicationController
     Tmdb::Api.key(ENV["movie_db_key"])
     @movie = Tmdb::Movie.detail(params[:id])
 
-    @note = Note.new
-
+    @note = Note.find_or_initialize_by(movie_id: @movie['id'])
+    # raise
     render :movie
 
   end
@@ -18,8 +18,8 @@ class WelcomeController < ApplicationController
     Tmdb::Api.key(ENV["movie_db_key"])
     @tvshow = Tmdb::TV.detail(params[:id])
 
-    @note = Note.new
-    
+    @note = Note.find_or_initialize_by(tvshow_id: @tvshow['id'])
+    # raise/
     render :tvshow
 
   end
