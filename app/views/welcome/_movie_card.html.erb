@@ -16,9 +16,6 @@
             (<%= movie.release_date[0 .. 3] %>)
           </div>
         <% end %>
-        <div id="addit">
-          <%= link_to "Make Note", welcome_movie_path, class: 'btn btn-info btn-sm' %>
-        </div>
         </div>
         <div class="info">
           <% if movie.overview.blank? %>

@@ -16,9 +16,6 @@
             (<%= show.first_air_date[0 .. 3] %>)
           </div>
         <% end %>
-        <div id="addit">
-          <%= link_to "Make Note", welcome_tvshow_path, class: 'btn btn-info btn-sm' %>
-        </div>
         </div>
         <div class="info">
           <% if show.overview.blank? %>
