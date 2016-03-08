@@ -1,1 +1,1 @@
-<%= render partial: 'welcome/movie_details', locals: {movie: @movie} %>
+<%= render partial: 'welcome/details', locals: {show_or_movie: @movie, name_or_title: @movie['title'], release_or_first_air_date: @movie['release_date'] } %>
