@@ -1,0 +1,28 @@
+<div class="col-sm-4">
+  <div class="container">
+    <div class="card">
+      <div class="card_header">
+        <h4><%= link_to "#{ truncate(name_or_title, :length => 30) }", controller: "welcome", action: action, id: show_or_movie.id %></h4>
+      </div>
+      <div class="thumb">
+        <% if show_or_movie.poster_path.blank? %>
+          <%= image_tag "no_poster.png" %>
+        <% else %>
+          <img src="http://image.tmdb.org/t/p/w342<%= show_or_movie.poster_path %>">
+        <% end %>
+      <% unless release_or_first_air_date.blank? %>
+        <div id="year">
+          (<%= release_or_first_air_date[0 .. 3] %>)
+        </div>
+      <% end %>
+      </div>
+      <div class="info">
+        <% if show_or_movie.overview.blank? %>
+          <p>Currently there is no description.<p/>
+        <% else %>
+          <p><%= truncate(show_or_movie.overview, :length => 265, :separator => '.') %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

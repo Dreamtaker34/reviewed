@@ -14,6 +14,7 @@ class NotesController < ApplicationController
     @note.assign_attributes(note_params)
 
     if @note.save
+
       redirect_to root_path
     end
   end
