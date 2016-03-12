@@ -18,5 +18,8 @@
 
 class Note < ActiveRecord::Base
   belongs_to :user
-  belongs_to :item
+  belongs_to :movie
+  belongs_to :tvshow
+
+  accepts_nested_attributes_for :movie, :tvshow
 end

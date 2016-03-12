@@ -13,8 +13,23 @@ class NotesController < ApplicationController
     @note.user = current_user
     @note.assign_attributes(note_params)
 
-    if @note.save
+    if @note.movie_id?
+      @movie = Movie.find_or_initialize_by(id: @note.movie_id)
+      @movie.id = params[:movie_id]
+      @movie.assign_attributes(movie_params)
 
+      @movie.save
+    end
+
+    if @note.tvshow_id?
+      @tvshow = Tvshow.find_or_initialize_by(id: @note.tvshow_id)
+      @tvshow.id = params[:tvshow_id]
+      @tvshow.assign_attributes(tvshow_params)
+
+      @tvshow.save
+    end
+
+    if @note.save
       redirect_to root_path
     end
   end
@@ -24,6 +39,28 @@ class NotesController < ApplicationController
   end
 
   def update
+    @note = Note.find(params[:id])
+    @note.assign_attributes(note_params)
+
+    if @note.movie_id?
+      @movie = Movie.find_or_initialize_by(id: @note.movie_id)
+      @movie.id = params[:movie_id]
+      @movie.assign_attributes(movie_params)
+
+      @movie.save
+    end
+
+    if @note.tvshow_id?
+      @tvshow = Tvshow.find_or_initialize_by(id: @note.tvshow_id)
+      @tvshow.id = params[:tvshow_id]
+      @tvshow.assign_attributes(tvshow_params)
+
+      @tvshow.save
+    end
+
+    if @note.save
+      redirect_to root_path
+    end
 
   end
 
@@ -36,4 +73,13 @@ class NotesController < ApplicationController
   def note_params
     params.require(:note).permit(:body, :progress, :rating, :completed, :date_completed, :public, :movie_id, :tvshow_id)
   end
+
+  def movie_params
+    params.require(:note).permit(movie_attributes: [:id, :title, :poster_path, :overview, :release_date])[:movie_attributes]
+  end
+
+  def tvshow_params
+    params.require(:note).permit(tvshow_attributes: [:id, :name, :poster_path, :overview, :first_air_date])[:tvshow_attributes]
+  end
+
 end

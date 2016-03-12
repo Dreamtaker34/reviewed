@@ -25,15 +25,28 @@
     </div>
 
     <% if @movie.present? %>
-      <%= @movie['id'] %>
       <%= f.hidden_field :movie_id, value: @movie['id'] %>
+      <p> Movie ID: <%= @movie['id'] %><p>
+      <%= f.fields_for :movie, Movie.new do |ff| %>
+        <%= ff.hidden_field :id, value: @movie['id'] %>
+        <%= ff.hidden_field :title, value: @movie['title'] %>
+        <%= ff.hidden_field :poster_path, value: @movie['poster_path'] %>
+        <%= ff.hidden_field :overview, value: @movie['overview'] %>
+        <%= ff.hidden_field :release_date, value: @movie['release_date'] %>
+      <% end %>
     <% end %>
 
     <% if @tvshow.present? %>
-      <%= @tvshow['id'] %>
       <%= f.hidden_field :tvshow_id, value: @tvshow['id'] %>
+      <p> TV Show ID: <%= @tvshow['id'] %></p>
+      <%= f.fields_for :tvshow, Tvshow.new do |ff| %>
+        <%= ff.hidden_field :id, value: @tvshow['id'] %>
+        <%= ff.hidden_field :name, value: @tvshow['name'] %>
+        <%= ff.hidden_field :poster_path, value: @tvshow['poster_path'] %>
+        <%= ff.hidden_field :overview, value: @tvshow['overview'] %>
+        <%= ff.hidden_field :first_air_date, value: @tvshow['first_air_date'] %>
+      <% end %>
     <% end %>
-
 
 
     <div class="form-group">
