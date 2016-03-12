@@ -1,0 +1,15 @@
+<div class="container">
+  <ul class="nav nav-tabs nav-justified">
+    <li class="active"><a data-toggle="tab" href="#now_playing">Now Playing</a></li>
+    <li><a data-toggle="tab" href="#coming_soon">Coming Soon</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="now_playing" class="tab-pane fade in active">
+      <%= render partial: "movies/movie", collection: @playing %>
+    </div>
+    <div id="coming_soon" class="tab-pane fade">
+      <%= render partial: "movies/movie", collection: @upcoming %>
+    </div>
+  </div>
+</div>

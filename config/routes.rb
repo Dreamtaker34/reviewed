@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :movies, only: :index
   # resources :welcome
 
   get 'welcome/search' => 'welcome#search'
