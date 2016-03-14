@@ -1,5 +1,11 @@
 class NotesController < ApplicationController
 
+  def index
+    @user = current_user
+    @notes = @user.notes.all
+
+  end
+
   def new
     @note = Note.new
   end
@@ -18,6 +24,8 @@ class NotesController < ApplicationController
       @movie.id = params[:movie_id]
       @movie.assign_attributes(movie_params)
 
+      @title = @movie.title
+
       @movie.save
     end
 
@@ -26,11 +34,16 @@ class NotesController < ApplicationController
       @tvshow.id = params[:tvshow_id]
       @tvshow.assign_attributes(tvshow_params)
 
+      @title = @tvshow.name
+
       @tvshow.save
     end
 
     if @note.save
+      flash[:notice] = "You created a note for #{@title}."
       redirect_to root_path
+    else
+      flash[:alert] = "Failed to write the note."
     end
   end
 
@@ -47,6 +60,8 @@ class NotesController < ApplicationController
       @movie.id = params[:movie_id]
       @movie.assign_attributes(movie_params)
 
+      @title = @movie.title
+
       @movie.save
     end
 
@@ -55,17 +70,29 @@ class NotesController < ApplicationController
       @tvshow.id = params[:tvshow_id]
       @tvshow.assign_attributes(tvshow_params)
 
+      @title = @tvshow.name
+
       @tvshow.save
     end
 
     if @note.save
+      flash[:notice] = "You edited your note for #{@title}."
       redirect_to root_path
+    else
+      flash[:alert] = "Failed to write the note."
     end
 
   end
 
   def destroy
+    @note = Note.find(params[:id])
 
+    if @note.destroy
+      flash[:notice] = "The note was erased."
+      redirect_to root_path
+    else
+      flash[:alert] = "Failed to erase the note."
+    end
   end
 
   private

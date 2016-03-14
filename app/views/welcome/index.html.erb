@@ -19,19 +19,6 @@
   </center>
   </div>
 
-  <div class="row">
-    <div class="col-sm-4">
-      <% if user_signed_in? %>
-        <h3 class="text-left">Latest Review</h3>
-        <ul>
-          <li>Item 1</li>
-        </ul>
-      <% else %>
-        <h3 class="text-center">Start making a list of what you have seen!</h3>
-        <p><center><%= link_to "Get Started.", new_user_registration_path, class: 'btn btn-success' %></center></p>
-      <% end %>
-    </div>
-
     <br/><br/><br/>
     <br/><br/><br/>
     <%= select("filter", "category", [["All", 0], ["Movies", 1], ["TV Shows", 2]], {}, onChange: "javascript: onChange(event);") %>

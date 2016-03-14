@@ -51,6 +51,9 @@
 
     <div class="form-group">
       <%= f.submit "Save Note", class: 'btn btn-success' %>
+      <% if @note.id != nil %>
+        <%= link_to "Erase Note", @note, method: :delete, class: 'btn btn-danger' %>
+      <% end %>
     </div>
   <% end %>
 </div>
