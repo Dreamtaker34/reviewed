@@ -3,6 +3,8 @@ class NotesController < ApplicationController
   def index
     @user = current_user
     @notes = @user.notes.all
+    @movies = @user.movies
+    @tv_shows = @user.tvshows
 
   end
 

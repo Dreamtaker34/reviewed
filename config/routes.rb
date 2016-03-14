@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :tv_shows, only: :index
   # resources :welcome
 
-  get 'welcome/search' => 'welcome#search'
+  get 'search' => 'welcome#search'
 
   get 'welcome/tv_search' => 'welcome#tv_search'
 

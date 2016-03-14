@@ -20,7 +20,10 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><a href="<%= movies_path %>">Movies</a></li>
-          <li><a href="<%= tv_shows_path %>">TV Shows</a><li>
+          <li><a href="<%= tv_shows_path %>">TV Shows</a></li>
+          <% if current_user %>
+            <li><a href="<%= notes_path %>">My Notes</a></li>
+          <% end %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>

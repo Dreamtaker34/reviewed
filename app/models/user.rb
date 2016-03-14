@@ -24,4 +24,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :notes, dependent: :destroy
+  has_many :movies, through: :notes
+  has_many :tvshows, through: :notes
 end

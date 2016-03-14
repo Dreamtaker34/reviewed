@@ -2,7 +2,7 @@
   <div class="container">
     <div class="card">
       <div class="card_header">
-        <h4><%= link_to "#{ truncate(name_or_title, :length => 30) }", controller: "welcome", action: action, id: show_or_movie.id %></h4>
+        <h4><%= link_to truncate(name_or_title, length: 30), controller: "welcome", action: action, id: show_or_movie.id %></h4>
       </div>
       <div class="thumb">
         <% if show_or_movie.poster_path.blank? %>

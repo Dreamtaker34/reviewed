@@ -1,3 +1,21 @@
-<% @notes.each do |n| %>
-<p><%= n.body %></p>
+<h3>Movies</h3>
+<% if @movies.blank? %>
+  <div class="container">
+    <h3>No matches found. Please try again.<h3>
+  </div>
+<% else %>
+  <div id="movies" class="row">
+    <%= render partial: "movies/movie", collection: @movies %>
+  </div>
+<% end %>
+
+<h3>TV shows </h3>
+<% if @tv_shows.blank? %>
+  <div class="container">
+    <h3>No matches found. Please try again.<h3>
+  </div>
+<% else %>
+  <div id="tv-shows" class="row">
+    <%= render partial: "tv_shows/tv_show", collection: @tv_shows %>
+  </div>
 <% end %>
