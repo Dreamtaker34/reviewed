@@ -1,27 +1,33 @@
-<div class="col-sm-4">
+<div class="col-md-4">
   <div class="container">
-    <div class="card">
-      <div class="card_header">
-        <h4><%= link_to truncate(name_or_title, length: 30), controller: "welcome", action: action, id: show_or_movie.id %></h4>
-      </div>
-      <div class="thumb">
+    <div class="cat-card_wrapper">
+      <div class="cat-card">
+        <% if current_user.movies.pluck(:movie_id).include?(show_or_movie.id) || current_user.tvshows.pluck(:tvshow_id).include?(show_or_movie.id) %>
+          <div class="ribbon"><span>Watched</span></div>
+        <% end %>
         <% if show_or_movie.poster_path.blank? %>
           <%= image_tag "no_poster.png" %>
         <% else %>
           <img src="http://image.tmdb.org/t/p/w342<%= show_or_movie.poster_path %>">
         <% end %>
-      <% unless release_or_first_air_date.blank? %>
-        <div id="year">
-          (<%= release_or_first_air_date[0 .. 3] %>)
+          <div class="cat-card_content">
+            <div class="cat-card_content_header">
+              <h3>
+                <%= link_to truncate(name_or_title, length: 30), controller: "welcome", action: action, id: show_or_movie.id %>
+                <% unless release_or_first_air_date.blank? %>
+                  <span class="cat_card_content_year">(<%= release_or_first_air_date[0 .. 3] %>)</span>
+                <% end %>
+              </h3>
+            </div>
+          <div class="cat_card_content_info">
+            <% if show_or_movie.overview.blank? %>
+              <p>Currently there is no description.<p/>
+            <% else %>
+              <p><%= truncate(show_or_movie.overview, :length => 265, :separator => '.') %></p>
+            <% end %>
+            <%= link_to "Write a note.", {controller: "welcome", action: action, id: show_or_movie.id}, class:"cat_card_content_footer" %>
+          </div>
         </div>
-      <% end %>
-      </div>
-      <div class="info">
-        <% if show_or_movie.overview.blank? %>
-          <p>Currently there is no description.<p/>
-        <% else %>
-          <p><%= truncate(show_or_movie.overview, :length => 265, :separator => '.') %></p>
-        <% end %>
       </div>
     </div>
   </div>

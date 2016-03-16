@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
-
+  before_action :require_sign_in
+  
   def index
     @user = current_user
     @notes = @user.notes.all
