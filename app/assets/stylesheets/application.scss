@@ -279,11 +279,14 @@ a {
 
 .cat_card_content_info {
   width: 100%;
-  padding: 5px;
+  padding-top: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
   border-top: 2px solid #BAC5E0;
   position: absolute;
   top: 50px;
 }
+
 .cat-card:hover .cat-card_content {
   background-color: rgba(0,0,0,0.7);
   bottom: 370px;
@@ -411,15 +414,13 @@ a {
 }
 
 .main_footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0; 
   width: 100%;
   height: auto;
+  margin-top: 50px;
   background-color: #0A323F;
   border-top: 1px solid #090909;
   padding: 5px;
+  clear: both;
 
   .links {
     color: #898E8F;

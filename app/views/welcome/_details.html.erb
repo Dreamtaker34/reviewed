@@ -46,5 +46,9 @@
       <% end %>
     </div>
   </div>
+  <br>
+  <% @notes.each do |n| %>
+    <%= n.body %>
+  <% end %>
 </div>
 <p> <%= show_or_movie %> </p>

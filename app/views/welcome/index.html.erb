@@ -19,30 +19,31 @@
   </center>
   </div>
 
-    <br/><br/><br/>
-    <br/><br/><br/>
-    <%= select("filter", "category", [["All", 0], ["Movies", 1], ["TV Shows", 2]], {}, onChange: "javascript: onChange(event);") %>
+    <% if @movies != nil && @tv_shows != nil %>
 
-    <h3>Movies</h3>
-    <% if @movies.blank? %>
-      <div class="container">
-        <h3>No matches found. Please try again.<h3>
-      </div>
-    <% else %>
-      <div id="movies" class="row">
-        <%= render partial: "movies/movie", collection: @movies %>
-      </div>
-    <% end %>
+      <%= select("filter", "category", [["All", 0], ["Movies", 1], ["TV Shows", 2]], {}, onChange: "javascript: onChange(event);") %>
 
-    <h3>TV shows </h3>
-    <% if @tv_shows.blank? %>
-      <div class="container">
-        <h3>No matches found. Please try again.<h3>
-      </div>
-    <% else %>
-      <div id="tv-shows" class="row">
-        <%= render partial: "tv_shows/tv_show", collection: @tv_shows %>
-      </div>
+      <h3>Movies</h3>
+      <% if @movies.blank? %>
+        <div class="container">
+          <h3>No matches found. Please try again.<h3>
+        </div>
+      <% else %>
+        <div id="movies" class="row">
+          <%= render partial: "movies/movie", collection: @movies %>
+        </div>
+      <% end %>
+
+      <h3>TV shows </h3>
+      <% if @tv_shows.blank? %>
+        <div class="container">
+          <h3>No matches found. Please try again.<h3>
+        </div>
+      <% else %>
+        <div id="tv-shows" class="row">
+          <%= render partial: "tv_shows/tv_show", collection: @tv_shows %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
