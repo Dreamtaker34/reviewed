@@ -5,7 +5,9 @@
   </div>
 <% else %>
   <div id="movies" class="row">
-    <%= render partial: "movies/movie", collection: @movies %>
+    <div class="movies-shows-container">
+      <%= render partial: "movies/movie", collection: @movies %>
+    </div>
   </div>
 <% end %>
 
@@ -16,6 +18,8 @@
   </div>
 <% else %>
   <div id="tv-shows" class="row">
-    <%= render partial: "tv_shows/tv_show", collection: @tv_shows %>
+    <div class="movies-shows-container">
+      <%= render partial: "tv_shows/tv_show", collection: @tv_shows %>
+    </div>
   </div>
 <% end %>

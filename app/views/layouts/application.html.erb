@@ -37,34 +37,34 @@
       </div>
     </div>
   </nav>
-  <div class="container">
-      <% if flash[:notice] %>
-        <div class="alert alert-success">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= flash[:notice] %>
-        </div>
-      <% elsif flash.now[:alert] %>
-        <div class="alert alert-danger">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= flash.now[:alert] %>
-        </div>
-      <% elsif flash[:alert] %>
-        <div class="alert alert-warning">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
+  <div class="container outside-container">
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash.now[:alert] %>
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash.now[:alert] %>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
 
-      <%= yield %>
+    <%= yield %>
+  </div>
+  <div class="main_footer">
+    <div class="links">
+      Link 1 |
+      Link 2
     </div>
-    <div class="main_footer">
-      <div class="links">
-        <a href="www.themoviedb.org">TMDb</a> |
-        <a href="www.imbd.com">IMDb</a>
-      </div>
-      <div class="credits">
-        Information provided by <a href="www.themoviedb.org"><img src="https://assets.tmdb.org/images/logos/var_6_0_tmdb-logo-1Line-GreenGradient-Shadow-Bree.png" alt="The Movie Database"></a>
-      </div>
+    <div class="credits">
+      Information provided by <img src="https://assets.tmdb.org/images/logos/var_6_0_tmdb-logo-1Line-GreenGradient-Shadow-Bree.png" alt="The Movie Database">
     </div>
+  </div>
 </body>
 </html>
