@@ -234,6 +234,7 @@ a {
 
 }
 
+// New flex design
 .wrapper {
   display: -webkit-box;
   display: -moz-box;
@@ -249,37 +250,75 @@ a {
 }
 
 .wrapper > * {
-  padding: 10px;
+  padding: 5px;
   flex: 1 100%;
 }
 
 .header {
-  background: tomato;
+  font-weight: normal;
+  margin-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  #title {
+    color: #BAC5E0;
+    font-size: 22pt;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  #year {
+    color: #898E8F;
+    font-size: 60%;
+  }
 }
 
 .footer {
-  background: lightgreen;
+  background-color: transparent;
 }
 
 .main {
+  color: #898E8F;
   text-align: left;
-  background: deepskyblue;
+  display: inherit;
+  background-color: rgba(0,0,0,0.4);
+  min-width: 40%; /* threw this in as a slight fix */
+
+  #description {
+    padding: 5px;
+    background-color: rgba(0,0,0,0.7);
+    height: auto;
+  }
 }
 
 .aside-1 {
-  background: gold;
-  padding: 5px;
+  background-color: rgba(0,0,0,0.4);
   color: #BAC5E0;
   font-size: 18px;
   font-style: italic;
+  font-weight: normal;
+  display: inherit;
 
-  img, #tagline {
+  #poster-section {
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  img {
     max-width: 250px;
+    margin: 5px;
+  }
+
+  #tagline {
+    padding: 0px 5px 10px 5px;
+    max-width: 250px;
+    margin: auto;
   }
 }
 
 .aside-2 {
-  background: hotpink;
+  background-color: rgba(0,0,0,0.4);
+
+  .note-toggle {
+    background-color: rgba(0,0,0,0.7);
+    padding: 5px;
+  }
 }
 
 @media all and (min-width: 600px) {
@@ -294,47 +333,34 @@ a {
   .footer  { order: 4; }
 }
 
-
-// Detail Flex
-.detail-flex {
+.shared-note-wrapper {
+  width: fit-content;
+  max-width: 300px;
   padding: 5px;
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  font-weight: normal;
+  color: #898E8F;
   background-color: rgba(0,0,0,0.4);
 
-
-  .header-section {
+  #shared-note-header {
+    padding: 5px;
+    text-align: left;
     background-color: rgba(0,0,0,0.7);
-    padding: 15px;
-
-    #header {
-      font-size: 36px;
-      flex: 1 1 auto;
-      color: #BAC5E0;
-
-    }
-
-    #year {
-      font-size: 16px;
-      margin: 8px;
-      color: #898E8F;
-    }
   }
 
-  .poster-section {
-    #poster {
-      max-width: 250px;
+  #shared-note {
+    padding: 0px 5px 0px 5px;
+    text-align: justify;
+    background-color: rgba(0,0,0,0.7);
 
-      img {
-        max-width: 250px;
-      }
-    }
+  }
 
-    #tagline {
-      color: #BAC5E0;
-      text-align: center;
-      font-size: 18px;
-      font-style: italic;
-    }
+  #shared-note-footer {
+    padding: 5px;
+    text-align: right;
+    background-color: rgba(0,0,0,0.7);
+
   }
 }
 
@@ -464,6 +490,7 @@ a {
 
     a {
       color: #898E8F;
+      text-decoration: underline;
     }
   }
 
@@ -478,7 +505,7 @@ a {
   }
 }
 
-// Nav Tab
+// Nav Tab on Movie Index
 .nav-tabs {
   font-size: 18px;
   background-color: #2E353D;

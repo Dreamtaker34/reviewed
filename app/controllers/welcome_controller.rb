@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
     @movies = []
     @shows = []
     @random = [Movie.all.sample.title, Tvshow.all.sample.name].sample
-    
+
   end
 
   def movie

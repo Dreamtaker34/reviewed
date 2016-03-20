@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :require_sign_in
-  
+
   def index
     @user = current_user
     @notes = @user.notes.all
@@ -101,7 +101,7 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:body, :progress, :rating, :completed, :date_completed, :public, :movie_id, :tvshow_id)
+    params.require(:note).permit(:personal, :shared, :progress, :rating, :completed, :date_completed, :movie_id, :tvshow_id)
   end
 
   def movie_params

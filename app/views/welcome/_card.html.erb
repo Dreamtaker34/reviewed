@@ -14,7 +14,7 @@
         <div class="card_content">
           <div class="card_content_header">
             <h3>
-              <%= link_to truncate(name_or_title, length: 30), controller: "welcome", action: action, id: show_or_movie.id %>
+              <%= link_to truncate(name_or_title, length: 40), controller: "welcome", action: action, id: show_or_movie.id %>
               <% unless release_or_first_air_date.blank? %>
                 <span class="card_content_year">(<%= release_or_first_air_date[0 .. 3] %>)</span>
               <% end %>

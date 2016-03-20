@@ -1,8 +1,12 @@
-<div class="col-3-md">
+
   <%= form_for note do |f| %>
     <div class="form-group">
-      <%= f.label "Note" %>
-      <%= f.text_area :body, class: 'form-control', placeholder: "Write your note." %>
+      <%= f.label "Your Personal Note" %>
+      <%= f.text_area :personal, class: 'form-control', placeholder: "Write your own personal note." %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Want a Public Note?" %>
+      <%= f.text_area :shared, class: 'form-control', placeholder: "Let others know what you thought." %>
     </div>
     <div class="form-group">
       <%= f.label "Progress" %>
@@ -19,9 +23,6 @@
     <div class="form-group">
       <%= f.label "Date Completed" %>
       <%= f.date_select :date_completed, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.check_box :public %> Make this a public note?
     </div>
 
     <% if @movie.present? %>
@@ -56,4 +57,3 @@
       <% end %>
     </div>
   <% end %>
-</div>

@@ -3,17 +3,17 @@
 # Table name: notes
 #
 #  id             :integer          not null, primary key
-#  body           :text
 #  progress       :string
 #  rating         :integer
 #  completed      :boolean
 #  date_completed :date
-#  public         :boolean
 #  user_id        :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  movie_id       :integer
 #  tvshow_id      :integer
+#  personal       :text
+#  shared         :text
 #
 
 class Note < ActiveRecord::Base

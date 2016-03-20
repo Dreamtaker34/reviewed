@@ -1,0 +1,15 @@
+<div class="shared-note-wrapper">
+  <div id="shared-note-header">
+    Written by <%= note.user.username %>.
+  </div>
+  <div id="shared-note">
+    <%= note.shared %>
+  </div>
+  <div id="shared-note-footer">
+    <% if note.completed? %>
+      Finished watching <%= time_ago_in_words(note.created_at) %> ago.
+    <% else %>
+      Progress: <%= note.progress.blank? ? "None" : note.progress %>
+    <% end %>
+  </div>
+</div>

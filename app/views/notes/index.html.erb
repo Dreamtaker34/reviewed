@@ -1,3 +1,4 @@
+<center>
 <h3>Movies</h3>
 <% if @movies.blank? %>
   <div class="container">
@@ -11,10 +12,10 @@
   </div>
 <% end %>
 
-<h3>TV shows </h3>
+<h3>TV shows</h3>
 <% if @tv_shows.blank? %>
   <div class="container">
-    <h3>ou haven't written any TV notes yet.<h3>
+    <h3>You haven't written any TV notes yet.<h3>
   </div>
 <% else %>
   <div id="tv-shows" class="row">
@@ -23,3 +24,4 @@
     </div>
   </div>
 <% end %>
+</center>

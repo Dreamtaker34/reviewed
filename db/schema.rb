@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320001539) do
+ActiveRecord::Schema.define(version: 20160320011409) do
 
   create_table "items", force: :cascade do |t|
     t.string   "movie_id"
@@ -37,17 +37,17 @@ ActiveRecord::Schema.define(version: 20160320001539) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.text     "body"
     t.string   "progress"
     t.integer  "rating"
     t.boolean  "completed"
     t.date     "date_completed"
-    t.boolean  "public"
     t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "movie_id"
     t.integer  "tvshow_id"
+    t.text     "personal"
+    t.text     "shared"
   end
 
   add_index "notes", ["user_id"], name: "index_notes_on_user_id"

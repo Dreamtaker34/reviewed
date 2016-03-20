@@ -17,6 +17,11 @@
 //= require underscore
 //= require_tree .
 
+$(document).ready(function(){
+    $("#share").click(function(){
+        $("#shared_note").toggle();
+    });
+});
 
 onChange = function(event){
   console.log(event);
