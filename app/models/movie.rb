@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: movies
+#
+#  id           :integer          not null, primary key
+#  title        :string
+#  poster_path  :string
+#  overview     :text
+#  release_date :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class Movie < ActiveRecord::Base
   has_many :notes
 
