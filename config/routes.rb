@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :movies, only: :index
-  resources :tv_shows, only: :index
+  resources :movies, only: [:index, :show]
+  resources :tv_shows, only: [:index, :show]
   # resources :welcome
 
   get 'search' => 'welcome#search'
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  get 'welcome/movie', :path => 'movie'
+  # get 'welcome/movie', :path => 'movie'
 
   get 'welcome/tvshow', :path => 'tvshow'
 

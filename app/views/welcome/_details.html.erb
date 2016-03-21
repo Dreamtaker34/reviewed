@@ -1,111 +1,114 @@
 <!-- New flex design -->
-<div class="wrapper">
-  <header class="header">
-      <div id="title"><%= name_or_title %> <span id="year">(<%= release_or_first_air_date[0 .. 3] %>)</span></div>
-  </header>
-  <aside class="aside aside-1">
-    <div id="poster-section">
-      <% if show_or_movie['poster_path'].blank? %>
-        <%= image_tag "no_poster.png" %>
-      <% else %>
-        <img src="http://image.tmdb.org/t/p/w342<%= show_or_movie['poster_path'] %>">
-      <% end %>
-      <% unless show_or_movie['tagline'].blank? %>
-        <div id="tagline">
-          "<%= show_or_movie['tagline'] %>"
-        </div>
-      <% end %>
-    </div>
-  </aside>
-  <article class="main">
-    <div id="description">
-    <% if show_or_movie['overview'].blank? %>
-      <p>Currently there is no description.<p/>
-    <% else %>
-      <p><%= show_or_movie['overview'] %><p>
-    <% end %>
-    <hr>
-      <div id="more-info">
-        <p>Genres: <% show_or_movie['genres'].each do |k| %>
-          <span class="label label-default" style="background-color: #0A323F; color: #898E8F"><%= k['name'] %></span>
-          <% end %>
-        </p>
-        <p><%= "Runtime: #{show_or_movie['runtime']} mins" if show_or_movie['runtime'].present? %></p>
-        <p><%= "Seasons: #{show_or_movie['number_of_seasons']}" if show_or_movie['number_of_seasons'].present? %></p>
-        <p><%= "Episodes: #{show_or_movie['number_of_episodes']}" if show_or_movie['number_of_episodes'].present? %></p>
-        <p><%= "Status: #{show_or_movie['status']}" if show_or_movie['status'].present? %></p>
-      </div>
-    </div>
-  </article>
-  <aside class="aside aside-2">
-    <div class="note-toggle">
-      <% if user_signed_in? %>
-        <div class="note" style="display:none">
-          <%= render partial: 'notes/form', locals: {note: @note, movie: show_or_movie} %>
-        </div>
-        <span class="note-field"><%= link_to "#{@note.new_record? ? 'Make' : 'Edit'} Note", '#', class: 'btn btn-info btn-xl note-field', onClick:"javascript: openNoteField();" %></span>
-      <% end %>
-    </div>
-  </aside>
-  <footer class="footer">Shared notes from others
-    <% @notes.each do |n| %>
-      <%= render partial: "notes/shared", locals: {note: n} %>
-    <% end %>
-  </footer>
-</div>
-
-
-<!-- Old details design -->
-  <div class="details">
-    <div class="details_header">
-      <h3><%= name_or_title %><span id="header_year">(<%= release_or_first_air_date[0 .. 3] %>)</span></h3>
-    </div>
-    <div class="row">
-      <div class="details_left col-sm-4">
-        <div class="poster">
-          <% if show_or_movie['poster_path'].blank? %>
-            <%= image_tag "no_poster.png" %>
-          <% else %>
-            <img src="http://image.tmdb.org/t/p/w342<%= show_or_movie['poster_path'] %>">
-          <% end %>
-        </div>
-        <div>
-          <% unless show_or_movie['tagline'].blank? %>
-            <div id="tagline">
-              "<%= show_or_movie['tagline'] %>"
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="details_info col-sm-8">
-        <p><%= show_or_movie['overview'] %><p>
-        <div class="more_info">
-        <p>Genres: <% show_or_movie['genres'].each do |k| %>
-          <span class="label label-default" style="background-color: #0A323F; color: #898E8F"><%= k['name'] %></span>
-          <% end %>
-        </p>
-        <% if show_or_movie['runtime'].present? %>
-          <p>Runtime: <%= show_or_movie['runtime'] %> mins</p>
+<div class="movie_or_tvshow_show">
+  <div class="wrapper">
+    <header class="header">
+        <div id="title"><%= name_or_title %> <span id="year">(<%= release_or_first_air_date[0 .. 3] %>)</span></div>
+    </header>
+    <aside class="aside aside-1">
+      <div id="poster-section">
+        <% if show_or_movie['poster_path'].blank? %>
+          <%= image_tag "no_poster.png" %>
+        <% else %>
+          <img src="http://image.tmdb.org/t/p/w342<%= show_or_movie['poster_path'] %>">
         <% end %>
-        <p><%= "Seasons: #{show_or_movie['number_of_seasons']}" if show_or_movie['number_of_seasons'].present? %></p>
-        <p><%= "Episodes: #{show_or_movie['number_of_episodes']}" if show_or_movie['number_of_episodes'].present? %></p>
-        <p><%= "Status: #{show_or_movie['status']}" if show_or_movie['status'].present? %></p>
+        <% unless show_or_movie['tagline'].blank? %>
+          <div id="tagline">
+            "<%= show_or_movie['tagline'] %>"
+          </div>
+        <% end %>
       </div>
-    </div>
-      <br style="clear:both">
-      <% if user_signed_in? %>
-      <div class="container">
-        <div class="note" style="display:none">
-          <%= render partial: 'notes/form', locals: {note: @note, movie: show_or_movie} %>
-        </div>
-        <span class="note-field"><%= link_to "#{@note.new_record? ? 'Make' : 'Edit'} Note", '#', class: 'btn btn-info btn-xl note-field', onClick:"javascript: openNoteField();" %></span>
-      </div>
+    </aside>
+    <article class="main">
+      <div id="description">
+      <% if show_or_movie['overview'].blank? %>
+        <p>Currently there is no description.<p/>
+      <% else %>
+        <p><%= show_or_movie['overview'] %><p>
       <% end %>
-    </div>
+      <hr>
+        <div id="more-info">
+          <p>Genres: <% show_or_movie['genres'].each do |k| %>
+            <span class="label label-default" style="background-color: #0A323F; color: #898E8F"><%= k['name'] %></span>
+            <% end %>
+          </p>
+          <p><%= "Runtime: #{show_or_movie['runtime']} mins" if show_or_movie['runtime'].present? %></p>
+          <p><%= "Seasons: #{show_or_movie['number_of_seasons']}" if show_or_movie['number_of_seasons'].present? %></p>
+          <p><%= "Episodes: #{show_or_movie['number_of_episodes']}" if show_or_movie['number_of_episodes'].present? %></p>
+          <p><%= "Status: #{show_or_movie['status']}" if show_or_movie['status'].present? %></p>
+        </div>
+      </div>
+    </article>
+    <aside class="aside aside-2">
+      <div class="note-toggle">
+        <% if user_signed_in? %>
+          <div class="note" style="display:none">
+            <%= render partial: 'notes/form', locals: {note: @note, movie: show_or_movie} %>
+          </div>
+          <span class="note-field"><%= link_to "#{@note.new_record? ? 'Make' : 'Edit'} Note", '#', class: 'btn btn-info btn-xl note-field', onClick:"javascript: openNoteField();" %></span>
+        <% end %>
+      </div>
+    </aside>
+    <footer class="footer">Shared notes from others
+      <% @notes.each do |n| %>
+        <%= render partial: "notes/shared", locals: {note: n} %>
+      <% end %>
+    </footer>
   </div>
-  <br>
-  <% @notes.each do |n| %>
-    <%= n.shared %>
-  <% end %>
+
+
+  <!-- Old details design -->
+    <div class="details">
+      <div class="details_header">
+        <h3><%= name_or_title %><span id="header_year">(<%= release_or_first_air_date[0 .. 3] %>)</span></h3>
+      </div>
+      <div class="row">
+        <div class="details_left col-sm-4">
+          <div class="poster">
+            <% if show_or_movie['poster_path'].blank? %>
+              <%= image_tag "no_poster.png" %>
+            <% else %>
+              <img src="http://image.tmdb.org/t/p/w342<%= show_or_movie['poster_path'] %>">
+            <% end %>
+          </div>
+          <div>
+            <% unless show_or_movie['tagline'].blank? %>
+              <div id="tagline">
+                "<%= show_or_movie['tagline'] %>"
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="details_info col-sm-8">
+          <p><%= show_or_movie['overview'] %><p>
+          <div class="more_info">
+          <p>Genres: <% show_or_movie['genres'].each do |k| %>
+            <span class="label label-default" style="background-color: #0A323F; color: #898E8F"><%= k['name'] %></span>
+            <% end %>
+          </p>
+          <% if show_or_movie['runtime'].present? %>
+            <p>Runtime: <%= show_or_movie['runtime'] %> mins</p>
+          <% end %>
+          <p><%= "Seasons: #{show_or_movie['number_of_seasons']}" if show_or_movie['number_of_seasons'].present? %></p>
+          <p><%= "Episodes: #{show_or_movie['number_of_episodes']}" if show_or_movie['number_of_episodes'].present? %></p>
+          <p><%= "Status: #{show_or_movie['status']}" if show_or_movie['status'].present? %></p>
+        </div>
+      </div>
+        <br style="clear:both">
+        <% if user_signed_in? %>
+        <div class="container">
+          <div class="note" style="display:none">
+            <%= render partial: 'notes/form', locals: {note: @note, movie: show_or_movie} %>
+          </div>
+          <span class="note-field"><%= link_to "#{@note.new_record? ? 'Make' : 'Edit'} Note", '#', class: 'btn btn-info btn-xl note-field', onClick:"javascript: openNoteField();" %></span>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <br>
+    <% @notes.each do |n| %>
+      <%= n.shared %>
+    <% end %>
+  </div>
+  <p> <%= show_or_movie %> </p>
+
 </div>
-<p> <%= show_or_movie %> </p>

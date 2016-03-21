@@ -44,7 +44,7 @@ class NotesController < ApplicationController
 
     if @note.save
       flash[:notice] = "You created a note for #{@title}."
-      redirect_to root_path
+      redirect_to :back
     else
       flash[:alert] = "Failed to write the note."
     end
@@ -80,7 +80,7 @@ class NotesController < ApplicationController
 
     if @note.save
       flash[:notice] = "You edited your note for #{@title}."
-      redirect_to root_path
+      redirect_to :back
     else
       flash[:alert] = "Failed to write the note."
     end
@@ -92,7 +92,7 @@ class NotesController < ApplicationController
 
     if @note.destroy
       flash[:notice] = "The note was erased."
-      redirect_to root_path
+      redirect_to :back
     else
       flash[:alert] = "Failed to erase the note."
     end

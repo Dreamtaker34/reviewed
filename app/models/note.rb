@@ -22,4 +22,5 @@ class Note < ActiveRecord::Base
   belongs_to :tvshow
 
   accepts_nested_attributes_for :movie, :tvshow
+
 end
