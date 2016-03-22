@@ -25,6 +25,9 @@
   box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
 }
 body {
+  background-image: url("WhiteWeave.png");
+  background-size: 100px;
+  background-attachment: fixed;
   background-color: #666A73;
 }
 
@@ -54,46 +57,6 @@ a {
   -webkit-box-shadow: inset 0px 0px 20px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px 0px 20px 2px rgba(0,0,0,0.75);
   box-shadow: inset 0px 0px 20px 2px rgba(0,0,0,0.75);
-}
-
-// Jumbotron
-.jumbotron {
-  color: #898E8F;
-  border-radius: 0px;
-  border: 5px solid #0A323F;
-  background-color: #2E353D;
-  -webkit-box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
-  -moz-box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
-  box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
-}
-
-// Search Bar
-#search_box {
-  margin: auto;
-  margin-bottom: 10px;
-  input[type="text"], textarea {
-    height: 30px;
-    width: 280px;
-    text-align: center;
-    font-size: 12pt;
-    color: #BAC5E0;
-    background-color : #666A73;
-    border: 0px;
-    border-color: #0A323F;
-    -webkit-box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
-    -moz-box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
-    box-shadow: inset 0px 0px 21px 1px rgba(5,5,5,0.4);
-
-}
-}
-
-#search_btn .btn-info {
-  color: #898E8F;
-  border: 2px solid #898E8F;
-  background-color: #0A323F;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 0px;
 }
 
 // Info Cards
@@ -270,10 +233,6 @@ a {
   }
 }
 
-.footer {
-  background-color: transparent;
-}
-
 .main {
   color: #898E8F;
   text-align: left;
@@ -333,128 +292,51 @@ a {
   .footer  { order: 4; }
 }
 
-.shared-note-wrapper {
-  width: fit-content;
-  max-width: 300px;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  font-weight: normal;
-  color: #898E8F;
-  background-color: rgba(0,0,0,0.4);
-
-  #shared-note-header {
-    padding: 5px;
-    text-align: left;
-    background-color: rgba(0,0,0,0.7);
-  }
-
-  #shared-note {
-    padding: 0px 5px 0px 5px;
-    text-align: justify;
-    background-color: rgba(0,0,0,0.7);
-
-  }
-
-  #shared-note-footer {
-    padding: 5px;
-    text-align: right;
-    background-color: rgba(0,0,0,0.7);
-
-  }
+.footer {
+  background-color: transparent;
+  padding: 0px;
 }
 
-// Detail Page
-.details {
-  background-color: #2E353D;
-  height: auto;
-  box-sizing: border-box;
-  -webkit-box-shadow: 0px 0px 21px 1px rgba(5,5,5,0.4);
-  -moz-box-shadow: 0px 0px 21px 1px rgba(5,5,5,0.4);
-  box-shadow: 0px 0px 21px 1px rgba(5,5,5,0.4);
+.shared-note {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
 
-  .details_header {
-    clear: right;
-    min-height: 30px;
-    background-color: #0A323F;
-    -webkit-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
-    -moz-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
-    box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
-
-    h3 {
-      color: #BAC5E0;
-      padding: 6px;
-      min-width: 200px;
-    }
-
-    h4 {
-      color: #BAC5E0;
-    }
-    #header_year {
-      font-size: 16px;
-      margin: 8px;
-      color: #898E8F;
-    }
-  }
-
-  .poster {
-    float:left;
-
-    img {
-      opacity: 0.75;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .details_left {
-    float: left;
-    height: auto;
-    width: 30%;
-  }
-
-  .details_info {
+  .shared-note-wrapper {
+    width: fit-content;
+    max-width: 300px;
+    padding: 5px;
+    margin: 5px;
+    display: table;
+    flex-direction: column;
+    font-weight: normal;
     color: #898E8F;
-    font-size: 16px;
-    padding-left: 0px;
-    padding-right: 25px;
-    margin-bottom: 10px;
-    width: 70%;
-    float:right;
+    background-color: rgba(0,0,0,0.4);
 
-    .more_info {
-      font-size: 14px;
-      border-top: 2px solid #898E8F;
-      border-bottom: 2px solid #898E8F;
-      padding-top: 10px;
-      margin-top: 5px;
-      margin-right: 5px;
-
-      .label {
-        color: #898E8F;
-        background-color: #0A323F;
-      }
+    #shared-note-header {
+      padding: 5px;
+      text-align: left;
+      background-color: rgba(0,0,0,0.7);
     }
-  }
 
-  #tagline {
-    color: #BAC5E0;
-    text-align: center;
-    font-size: 18px;
-    font-style: italic;
-    clear: left;
-  }
+    #shared-note {
+      padding: 0px 5px 0px 5px;
+      text-align: justify;
+      background-color: rgba(0,0,0,0.7);
 
-  #drop_shadow {
-    -webkit-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
-    -moz-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
-    box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
+    }
+
+    #shared-note-footer {
+      padding: 5px;
+      text-align: right;
+      background-color: rgba(0,0,0,0.7);
+
+    }
   }
 }
 
 // Note Section
 .note {
-  color: #898E8F;
 }
 
 // Note toggle
@@ -532,22 +414,11 @@ a {
     }
 }
 
-
 .movies-shows-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
-// body {
-//   @media (max-height: 600px){
-//     .main_footer{
-//       position: fixed;
-//       bottom: 0;
-//     }
-//   }
-//
-// }
 
 .outside-container{
   min-height: calc(100vh - 185px);
