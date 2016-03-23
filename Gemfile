@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
-gem 'bootstrap-sass'
+gem 'materialize-sass'
 gem 'figaro'
 gem 'themoviedb'
 

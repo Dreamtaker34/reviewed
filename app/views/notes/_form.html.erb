@@ -1,6 +1,41 @@
 
-  <%= form_for note do |f| %>  
+  <%= form_for note do |f| %>
     <div class="form-group">
+      <!-- Personal -->
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
+          <label for="textarea1">Your Personal Note</label>
+        </div>
+      </div>
+      <!-- Shared -->
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
+          <label for="textarea1">Your Shared Note</label>
+        </div>
+      </div>
+      <!-- Progress -->
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="input_text" type="text" length="30">
+          <label for="input_text">Your Progress</label>
+        </div>
+      </div>
+      <!-- Rating -->
+      <form action="#">
+        <p class="range-field">
+          <label for="test5">Rating</label>
+          <input type="range" id="test5" min="0" max="10" />
+        </p>
+      </form>
+      <!-- Completed -->
+      <input type="checkbox" id="test5" />
+      <label for="test5">Completed?</label>
+      <!-- Date Completed -->
+      <input type="date" class="datepicker">
+
+<!-- Old Form -->
       <%= f.label "Your Personal Note" %>
       <%= f.text_area :personal, class: 'form-control', placeholder: "Write your own personal note." %>
     </div>
@@ -27,7 +62,6 @@
 
     <% if @movie.present? %>
       <%= f.hidden_field :movie_id, value: @movie['id'] %>
-      <p> Movie ID: <%= @movie['id'] %><p>
       <%= f.fields_for :movie, Movie.new do |ff| %>
         <%= ff.hidden_field :id, value: @movie['id'] %>
         <%= ff.hidden_field :title, value: @movie['title'] %>
@@ -39,7 +73,6 @@
 
     <% if @tvshow.present? %>
       <%= f.hidden_field :tvshow_id, value: @tvshow['id'] %>
-      <p> TV Show ID: <%= @tvshow['id'] %></p>
       <%= f.fields_for :tvshow, Tvshow.new do |ff| %>
         <%= ff.hidden_field :id, value: @tvshow['id'] %>
         <%= ff.hidden_field :name, value: @tvshow['name'] %>

@@ -14,21 +14,28 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+ @import "materialize/components/color";
+ $primary-color: color("blue", "lighten-2") !default;
+ @import 'materialize';
 
-.navbar {
-  border-radius: 0px;
-  background-color: #0A323F;
-  -webkit-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
-  -moz-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
-  box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
+
+nav {
+  background-color: rgba(0, 55, 64, 0.69);
+  margin-bottom: 25px;
 }
+
+// .navbar {
+//   border-radius: 0px;
+//   background-color: #0A323F;
+//   -webkit-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
+//   -moz-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
+//   box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
+// }
 body {
   background-image: url("WhiteWeave.png");
   background-size: 100px;
   background-attachment: fixed;
-  background-color: #666A73;
+  background-color: #FFFFFF;
 }
 
 h1 {
@@ -337,6 +344,8 @@ a {
 
 // Note Section
 .note {
+  padding: 5px;
+  background-color: rgba(0,0,0,0.7);
 }
 
 // Note toggle
@@ -360,7 +369,7 @@ a {
   width: 100%;
   height: auto;
   margin-top: 50px;
-  background-color: #0A323F;
+  background-color: rgba(0, 55, 64, 0.69);
   border-top: 1px solid #090909;
   padding: 5px;
   clear: both;

@@ -1,20 +1,22 @@
-<h1>Review it.</h1>
+<h3>Review it.</h3>
 
 <div class="jumbotron">
   <center>
-    <h3>Want to make a note about a movie for yourself?</h3>
-      <form method='post' data-remote='true'>
-      <input name='_method' type='hidden' value='patch' />
-    </form>
+    <h5>Want to make a note about a movie for yourself?</h5>
+      <div class="search">
+        <form method='post' data-remote='true'>
+        <input name='_method' type='hidden' value='patch' />
+      </form>
 
-    <%= form_tag(search_path, {method: "get"}) do %>
-      <div id="search_box">
-        <%= text_field_tag :q, "", required: true %>
-      </div>
-      <div id="search_btn">
-        <%= submit_tag "Search", class: 'btn btn-info btn-xl' %>
-      </div>
-    <% end %>
+      <%= form_tag(search_path, {method: "get"}) do %>
+        <div id="search_box">
+          <%= text_field_tag :q, "", required: true %>
+        </div>
+        <div id="search_btn">
+          <%= submit_tag "Search", class: 'btn btn-info btn-xl' %>
+        </div>
+      <% end %>
+    </div>
   </center>
 </div>
 

@@ -1,16 +1,16 @@
-<ul class="nav nav-tabs nav-justified">
-  <li class="active"><a data-toggle="tab" href="#now_playing">Now Playing</a></li>
-  <li><a data-toggle="tab" href="#coming_soon">Coming Soon</a></li>
-</ul>
-
-<div class="tab-content">
-  <div id="now_playing" class="tab-pane fade in active">
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s6"><a class="active" href="#test1">In Theaters</a></li>
+      <li class="tab col s6"><a href="#test2">Coming Soon</a></li>
+    </ul>
+  </div>
+  <div id="test1" class="col s12">
     <div class="movies-shows-container">
       <%= render partial: "movies/movie", collection: @playing %>
     </div>
-
   </div>
-  <div id="coming_soon" class="tab-pane fade">
+  <div id="test2" class="col s12">
     <div class="movies-shows-container">
       <%= render partial: "movies/movie", collection: @upcoming %>
     </div>

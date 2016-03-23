@@ -13,15 +13,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
+//= require materialize-sprockets
 //= require underscore
 //= require_tree .
 
 $(document).ready(function(){
-    $("#share").click(function(){
-        $("#shared_note").toggle();
-    });
+  $('ul.tabs').tabs('select_tab', 'tab_id');
 });
+
+$('#textarea1').val('New Text');
+$('#textarea1').trigger('autoresize');
+
+
+// $(document).ready(function(){
+//     $("#share").click(function(){
+//         $("#shared_note").toggle();
+//     });
+// });
 
 onChange = function(event){
   console.log(event);
