@@ -1,11 +1,11 @@
 <div class="">
   <div class="card_wrapper">
-    <div class="card">
-      <% if current_user %>
-        <% if current_user.movies.pluck(:movie_id).include?(show_or_movie.id) || current_user.tvshows.pluck(:tvshow_id).include?(show_or_movie.id) %>
-          <div class="ribbon"><span>Watched</span></div>
-        <% end %>
+    <% if current_user %>
+      <% if current_user.movies.pluck(:movie_id).include?(show_or_movie.id) || current_user.tvshows.pluck(:tvshow_id).include?(show_or_movie.id) %>
+        <div class="ribbon"><span>Watched</span></div>
       <% end %>
+    <% end %>
+    <div class="card">
       <% if show_or_movie.poster_path.blank? %>
         <%= image_tag "no_poster.png" %>
       <% else %>

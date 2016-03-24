@@ -25,11 +25,11 @@ $('#textarea1').val('New Text');
 $('#textarea1').trigger('autoresize');
 
 
-// $(document).ready(function(){
-//     $("#share").click(function(){
-//         $("#shared_note").toggle();
-//     });
-// });
+$(document).ready(function(){
+    $("#footer-header").click(function(){
+        $(".shared_note").toggle();
+    });
+});
 
 onChange = function(event){
   console.log(event);

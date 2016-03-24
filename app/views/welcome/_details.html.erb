@@ -1,3 +1,11 @@
+<script>
+$(document).ready(function(){
+    $("#footer-header").click(function(){
+        $(".shared-note").slideToggle("fast");
+    });
+});
+</script>
+
 <!-- New flex design -->
 <div class="movie_or_tvshow_show">
   <div class="wrapper">
@@ -23,12 +31,12 @@
       <% if show_or_movie['overview'].blank? %>
         <p>Currently there is no description.<p/>
       <% else %>
-        <p><%= show_or_movie['overview'] %><p>
+        <%= show_or_movie['overview'] %>
       <% end %>
       <hr>
         <div id="more-info">
           <p>Genres: <% show_or_movie['genres'].each do |k| %>
-            <span class="label label-default" style="background-color: #0A323F; color: #898E8F"><%= k['name'] %></span>
+            <span class="label label-default"><%= k['name'] %></span>
             <% end %>
           </p>
           <p><%= "Runtime: #{show_or_movie['runtime']} mins" if show_or_movie['runtime'].present? %></p>
@@ -46,8 +54,10 @@
         <% end %>
     </aside>
     <footer class="footer">
-      <p>Shared notes from others</p>
-      <div class="shared-note">
+      <div id="footer-header">
+        <p><%= @notes.count %> Shared Notes. Click to see them.</p>
+      </div>
+      <div class="shared-note" style="display: none">
       <% @notes.each do |n| %>
         <%= render partial: "notes/shared", locals: {note: n} %>
       <% end %>

@@ -22,6 +22,7 @@
 nav {
   background-color: rgba(0, 55, 64, 0.69);
   margin-bottom: 25px;
+  border-bottom: 1px solid #090909;
 }
 
 // .navbar {
@@ -161,7 +162,7 @@ a {
   .card_content_header {
     padding-left: 5px;
     padding-right: 5px;
-    margin-top: -20px;
+    margin-top: -25px;
     width: auto;
     text-align: center;
 
@@ -187,7 +188,7 @@ a {
 
   .card:hover .card_content {
     background-color: rgba(0,0,0,0.7);
-    bottom: 370px;
+    bottom: 375px;
   }
 
   .card_content_footer {
@@ -202,166 +203,6 @@ a {
     background-color: #0A323F;
   }
 
-}
-
-// New flex design
-.wrapper {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-
-  font-weight: bold;
-  text-align: center;
-}
-
-.wrapper > * {
-  padding: 5px;
-  flex: 1 100%;
-}
-
-.header {
-  font-weight: normal;
-  margin-bottom: 5px;
-  background-color: rgba(0, 0, 0, 0.4);
-
-  #title {
-    color: #BAC5E0;
-    font-size: 22pt;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  #year {
-    color: #898E8F;
-    font-size: 60%;
-  }
-}
-
-.main {
-  color: #898E8F;
-  text-align: left;
-  display: inherit;
-  background-color: rgba(0,0,0,0.4);
-  min-width: 40%; /* threw this in as a slight fix */
-
-  #description {
-    padding: 5px;
-    background-color: rgba(0,0,0,0.7);
-    height: auto;
-  }
-}
-
-.aside-1 {
-  background-color: rgba(0,0,0,0.4);
-  color: #BAC5E0;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: normal;
-  display: inherit;
-
-  #poster-section {
-    background-color: rgba(0,0,0,0.7);
-  }
-
-  img {
-    max-width: 250px;
-    margin: 5px;
-  }
-
-  #tagline {
-    padding: 0px 5px 10px 5px;
-    max-width: 250px;
-    margin: auto;
-  }
-}
-
-.aside-2 {
-  background-color: rgba(0,0,0,0.4);
-
-  .note-toggle {
-    background-color: rgba(0,0,0,0.7);
-    padding: 5px;
-  }
-}
-
-@media all and (min-width: 600px) {
-  .aside { flex: 0 auto; }
-}
-
-@media all and (min-width: 800px) {
-  .main    { flex: 3 0px; }
-  .aside-1 { order: 1; }
-  .main    { order: 2; }
-  .aside-2 { order: 3; }
-  .footer  { order: 4; }
-}
-
-.footer {
-  background-color: transparent;
-  padding: 0px;
-}
-
-.shared-note {
-  display: flex;
-  justify-content: space-around;
-  flex-flow: row wrap;
-
-  .shared-note-wrapper {
-    width: fit-content;
-    max-width: 300px;
-    padding: 5px;
-    margin: 5px;
-    display: table;
-    flex-direction: column;
-    font-weight: normal;
-    color: #898E8F;
-    background-color: rgba(0,0,0,0.4);
-
-    #shared-note-header {
-      padding: 5px;
-      text-align: left;
-      background-color: rgba(0,0,0,0.7);
-    }
-
-    #shared-note {
-      padding: 0px 5px 0px 5px;
-      text-align: justify;
-      background-color: rgba(0,0,0,0.7);
-
-    }
-
-    #shared-note-footer {
-      padding: 5px;
-      text-align: right;
-      background-color: rgba(0,0,0,0.7);
-
-    }
-  }
-}
-
-// Note Section
-.note {
-  padding: 5px;
-  background-color: rgba(0,0,0,0.7);
-}
-
-// Note toggle
-.note-field {
-  .btn-info {
-    font-size: 18px;
-    border: 1px solid #898E8F;
-    border-radius: 0px;
-    padding-top: px;
-    padding-bottom: 5px;
-    padding-right: 20px;
-    padding-left: 20px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 // Main Footer
@@ -431,4 +272,5 @@ a {
 
 .outside-container{
   min-height: calc(100vh - 185px);
+  width: 90%;
 }

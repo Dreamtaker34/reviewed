@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def index
     @movies = []
     @shows = []
-    @random = [Movie.all.sample.title, Tvshow.all.sample.name].sample
+    # @random = [Movie.all.sample.title, Tvshow.all.sample.name].sample
 
   end
 

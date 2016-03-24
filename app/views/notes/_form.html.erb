@@ -1,92 +1,72 @@
 
-  <%= form_for note do |f| %>
-    <div class="form-group">
-      <!-- Personal -->
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
-          <label for="textarea1">Your Personal Note</label>
-        </div>
+<%= form_for note do |f| %>
+  <div class="form-group">
+    <!-- Personal -->
+    <div class="">
+      <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
+        <label for="textarea1" id="label-align">My Personal Note</label>
       </div>
-      <!-- Shared -->
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
-          <label for="textarea1">Your Shared Note</label>
-        </div>
+    </div>
+    <!-- Shared -->
+    <div class="">
+      <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
+        <label for="textarea1" id="label-align">My Shared Note</label>
       </div>
-      <!-- Progress -->
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="input_text" type="text" length="30">
-          <label for="input_text">Your Progress</label>
-        </div>
+    </div>
+    <!-- Progress -->
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="input_text" type="text" length="30">
+        <label for="input_text">My Progress</label>
       </div>
-      <!-- Rating -->
-      <form action="#">
-        <p class="range-field">
-          <label for="test5">Rating</label>
-          <input type="range" id="test5" min="0" max="10" />
-        </p>
-      </form>
-      <!-- Completed -->
-      <input type="checkbox" id="test5" />
-      <label for="test5">Completed?</label>
-      <!-- Date Completed -->
-      <input type="date" class="datepicker">
-
-<!-- Old Form -->
-      <%= f.label "Your Personal Note" %>
-      <%= f.text_area :personal, class: 'form-control', placeholder: "Write your own personal note." %>
     </div>
-    <div class="form-group">
-      <%= f.label "Want a Public Note?" %>
-      <%= f.text_area :shared, class: 'form-control', placeholder: "Let others know what you thought." %>
+    <!-- Rating -->
+    <form action="#">
+      <p class="range-field">
+        <label for="test5">Rating</label>
+        <input type="range" id="test5" min="0" max="10" />
+      </p>
+    </form>
+    <!-- Completed -->
+    <div class="completed col s6">
+    <input type="checkbox" id="test5" />
+    <label for="test5">I have completed this.</label>
     </div>
-    <div class="form-group">
-      <%= f.label "Progress" %>
-      <%= f.text_field :progress, class: 'form-control', placeholder: "Where did you stop?" %>
-    </div>
-    <div class="form-group">
-      <%= f.label "Rating" %>
-      <%= f.select :rating, [['1 - Hated It', 1], 2, 3, 4, ['5 - Liked It', 5], 6, 7, 8, 9, ['10 - Loved It', 10]], class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label "Completed?" %>
-      <%= f.check_box :completed, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label "Date Completed" %>
-      <%= f.date_select :date_completed, class: 'form-control' %>
+    <!-- Date Completed -->
+    <div class="date-picker col s6">
+    <label for="date_completed">When?</label>
+    <input id="date_completed" type="date" class="datepicker">
     </div>
 
-    <% if @movie.present? %>
-      <%= f.hidden_field :movie_id, value: @movie['id'] %>
-      <%= f.fields_for :movie, Movie.new do |ff| %>
-        <%= ff.hidden_field :id, value: @movie['id'] %>
-        <%= ff.hidden_field :title, value: @movie['title'] %>
-        <%= ff.hidden_field :poster_path, value: @movie['poster_path'] %>
-        <%= ff.hidden_field :overview, value: @movie['overview'] %>
-        <%= ff.hidden_field :release_date, value: @movie['release_date'] %>
-      <% end %>
+  <% if @movie.present? %>
+    <%= f.hidden_field :movie_id, value: @movie['id'] %>
+    <%= f.fields_for :movie, Movie.new do |ff| %>
+      <%= ff.hidden_field :id, value: @movie['id'] %>
+      <%= ff.hidden_field :title, value: @movie['title'] %>
+      <%= ff.hidden_field :poster_path, value: @movie['poster_path'] %>
+      <%= ff.hidden_field :overview, value: @movie['overview'] %>
+      <%= ff.hidden_field :release_date, value: @movie['release_date'] %>
     <% end %>
-
-    <% if @tvshow.present? %>
-      <%= f.hidden_field :tvshow_id, value: @tvshow['id'] %>
-      <%= f.fields_for :tvshow, Tvshow.new do |ff| %>
-        <%= ff.hidden_field :id, value: @tvshow['id'] %>
-        <%= ff.hidden_field :name, value: @tvshow['name'] %>
-        <%= ff.hidden_field :poster_path, value: @tvshow['poster_path'] %>
-        <%= ff.hidden_field :overview, value: @tvshow['overview'] %>
-        <%= ff.hidden_field :first_air_date, value: @tvshow['first_air_date'] %>
-      <% end %>
-    <% end %>
-
-
-    <div class="form-group">
-      <%= f.submit "Save Note", class: 'btn btn-success' %>
-      <% if @note.id != nil %>
-        <%= link_to "Erase Note", @note, method: :delete, class: 'btn btn-danger' %>
-      <% end %>
-    </div>
   <% end %>
+
+  <% if @tvshow.present? %>
+    <%= f.hidden_field :tvshow_id, value: @tvshow['id'] %>
+    <%= f.fields_for :tvshow, Tvshow.new do |ff| %>
+      <%= ff.hidden_field :id, value: @tvshow['id'] %>
+      <%= ff.hidden_field :name, value: @tvshow['name'] %>
+      <%= ff.hidden_field :poster_path, value: @tvshow['poster_path'] %>
+      <%= ff.hidden_field :overview, value: @tvshow['overview'] %>
+      <%= ff.hidden_field :first_air_date, value: @tvshow['first_air_date'] %>
+    <% end %>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= f.submit "Save Note", class: 'btn btn-success' %>
+    <% if @note.id != nil %>
+      <%= link_to "Erase Note", @note, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to erase this note?'} %>
+    <% end %>
+  </div>
+<% end %>
