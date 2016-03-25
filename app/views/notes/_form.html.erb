@@ -1,24 +1,23 @@
-
 <%= form_for note do |f| %>
   <div class="form-group">
     <!-- Personal -->
     <div class="">
       <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
+        <%= f.text_area :personal, class: 'materialize-textarea', length: 200, type: 'text' %>
         <label for="textarea1" id="label-align">My Personal Note</label>
       </div>
     </div>
     <!-- Shared -->
     <div class="">
       <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
+        <%= f.text_area :shared, class: 'materialize-textarea', length: 200, type: 'text' %>
         <label for="textarea1" id="label-align">My Shared Note</label>
       </div>
     </div>
     <!-- Progress -->
     <div class="row">
       <div class="input-field col s12">
-        <input id="input_text" type="text" length="30">
+        <%= f.text_field :progress, length: 30, type: 'text' %>
         <label for="input_text">My Progress</label>
       </div>
     </div>
@@ -26,18 +25,18 @@
     <form action="#">
       <p class="range-field">
         <label for="test5">Rating</label>
-        <input type="range" id="test5" min="0" max="10" />
+        <%= f.text_field :rating, id:'test5', type: 'range', min: 0, max: 10 %>
       </p>
     </form>
     <!-- Completed -->
     <div class="completed col s6">
-    <input type="checkbox" id="test5" />
-    <label for="test5">I have completed this.</label>
+      <%= f.check_box :completed, id:"completed" %>
+      <%= f.label "Watched all of it?", for:"completed", id:"completed" %>
     </div>
     <!-- Date Completed -->
     <div class="date-picker col s6">
-    <label for="date_completed">When?</label>
-    <input id="date_completed" type="date" class="datepicker">
+      <label for="date_completed">When?</label>
+      <%= f.text_field :date_completed, id: 'date_completed', type: 'date', class: 'datepicker' %>
     </div>
 
   <% if @movie.present? %>
@@ -63,10 +62,10 @@
   <% end %>
 
 
-  <div class="form-group">
+  <div class="form-group" style="display: flex; justify-content: space-around">
     <%= f.submit "Save Note", class: 'btn btn-success' %>
     <% if @note.id != nil %>
-      <%= link_to "Erase Note", @note, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to erase this note?'} %>
+      <%= link_to "Erase Note", @note, method: :delete, class: 'waves-effect waves-light btn red darken-4', data: {confirm: 'Are you sure you want to erase this note?'} %>
     <% end %>
   </div>
 <% end %>

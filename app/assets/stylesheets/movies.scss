@@ -2,11 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// ul.tabs {
+//     background-color: transparent;
+//     font-size: 18pt;
+//
+//     li.tab > a {
+//       color: rgba(0,0,0,0.4);
+//
+//       li.active > a {
+//         color: rgba(0,0,0,1);
+//       }
+//     }
+// }
+
 .movie_or_tvshow_show{
   .wrapper{
     display: flex;
     justify-content: space-around;
-    
+
     #poster-section{
       margin: auto;
     }

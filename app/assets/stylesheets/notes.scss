@@ -133,6 +133,24 @@ aside.aside-2 {
 .footer {
   background-color: transparent;
   padding: 0px;
+
+  #footer-header {
+    padding: 5px;
+    margin-top: 5px;
+    font-weight: normal;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    #title {
+      color: #BAC5E0;
+      font-size: 13pt;
+      background-color: rgba(0, 0, 0, 0.7);
+
+      #click {
+        color: #898E8F;
+        font-size: 75%;
+      }
+    }
+  }
 }
 
 .shared-note {

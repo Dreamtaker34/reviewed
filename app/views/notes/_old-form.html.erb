@@ -1,39 +1,5 @@
 
   <%= form_for note do |f| %>
-    <div class="form-group">
-      <!-- Personal -->
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
-          <label for="textarea1">Your Personal Note</label>
-        </div>
-      </div>
-      <!-- Shared -->
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea" length="200"></textarea>
-          <label for="textarea1">Your Shared Note</label>
-        </div>
-      </div>
-      <!-- Progress -->
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="input_text" type="text" length="30">
-          <label for="input_text">Your Progress</label>
-        </div>
-      </div>
-      <!-- Rating -->
-      <form action="#">
-        <p class="range-field">
-          <label for="test5">Rating</label>
-          <input type="range" id="test5" min="0" max="10" />
-        </p>
-      </form>
-      <!-- Completed -->
-      <input type="checkbox" id="test5" />
-      <label for="test5">Completed?</label>
-      <!-- Date Completed -->
-      <input type="date" class="datepicker">
 
 <!-- Old Form -->
       <%= f.label "Your Personal Note" %>

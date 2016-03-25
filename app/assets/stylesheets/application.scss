@@ -238,31 +238,31 @@ a {
 }
 
 // Nav Tab on Movie Index
-.nav-tabs {
-  font-size: 18px;
-  background-color: #2E353D;
-
-  .tab-content {
-  }
-
-  li.active > a,
-  li.active > a:hover,
-  li.active > a:focus{
-            color: #9d9d9d;
-            background-color: #0A323F;
-            border-radius: 0;
-          }
-  li > a {
-    color: #9d9d9d;
-    border-radius: 0;
-  }
-
-  li > a:hover {
-    background-color: #0A323F !important;
-      border-radius: 0;
-      color: #9d9d9d;
-    }
-}
+// .nav-tabs {
+//   font-size: 18px;
+//   background-color: #2E353D;
+//
+//   .tab-content {
+//   }
+//
+//   li.active > a,
+//   li.active > a:hover,
+//   li.active > a:focus{
+//             color: #9d9d9d;
+//             background-color: #0A323F;
+//             border-radius: 0;
+//           }
+//   li > a {
+//     color: #9d9d9d;
+//     border-radius: 0;
+//   }
+//
+//   li > a:hover {
+//     background-color: #0A323F !important;
+//       border-radius: 0;
+//       color: #9d9d9d;
+//     }
+// }
 
 .movies-shows-container{
   display: flex;
@@ -271,6 +271,6 @@ a {
 }
 
 .outside-container{
-  min-height: calc(100vh - 185px);
+  min-height: calc(100vh - 208px);
   width: 90%;
 }
