@@ -6,7 +6,7 @@
     <%= note.shared %>
   </div>
   <div id="shared-note-footer">
-    <% if note.completed? %>
+    <% if note.completed? && note.date_completed? %>
       Finished watching <%= time_ago_in_words(note.date_completed) %> ago.
     <% else %>
       Progress: <%= note.progress.blank? ? "None" : note.progress %>

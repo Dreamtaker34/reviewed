@@ -2,18 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// ul.tabs {
-//     background-color: transparent;
-//     font-size: 18pt;
-//
-//     li.tab > a {
-//       color: rgba(0,0,0,0.4);
-//
-//       li.active > a {
-//         color: rgba(0,0,0,1);
-//       }
-//     }
-// }
+ul.tabs {
+  font-size: 18pt;
+  font-weight: 500;
+  width: 100% !important;
+  border: 5px solid rgba(0, 55, 64, 0.69);
+  box-shadow: inset 0px 0px 21px 1px rgba(5, 5, 5, 0.4);
+
+    .tab {
+        line-height: 40px;
+    }
+    
+    li.tab > a {
+      color: rgba(0,0,0,0.4);
+    }
+
+    li.tab > a:hover {
+      color: rgba(0, 55, 64, 0.69);
+    }
+
+    .active {
+      color: #0A323F !important;
+    }
+    .indicator {
+      height: 4px;
+      background-color: #0A323F;
+    }
+}
+
+ul#search {
+  border-top: 0px;
+
+  li.tab {
+    line-height: 48px;
+  }
+}
 
 .movie_or_tvshow_show{
   .wrapper{

@@ -51,8 +51,25 @@ $(document).ready(function(){
           <div class="note">
             <%= render partial: 'notes/form', locals: {note: @note, movie: show_or_movie} %>
           </div>
+          <% else %>
+            <div class="note">
+              <div class="detail-signup">
+                <header>Have you seen this?</header>
+                  <p>If so, why not write down what you thought?</p>
+                <span style="font-weight: 500">Sign up and you can:</span>
+                <ul>
+                  <li>Make a note for yourself.</li>
+                  <li>Mark down what you rated it and...</li>
+                  <li>Where you left off or when you finished watching.</li>
+                  <li>You can also make a note others can read.</li>
+                </ul>
+                <br>
+              <center><%= link_to "Sign up", new_user_registration_path, class: 'btn green' %></center>
+            </div>
+          </div>
         <% end %>
     </aside>
+    <% if signed_in? %>
     <footer class="footer">
       <div id="footer-header">
         <div id="title">
@@ -66,6 +83,7 @@ $(document).ready(function(){
       <% end %>
       </div>
     </footer>
+    <% end %>
   </div>
 
 

@@ -1,8 +1,6 @@
-<h3>Review it.</h3>
-
 <div class="jumbotron">
   <center>
-    <h5>Want to make a note about a movie for yourself?</h5>
+    <h5>Search for a Movie or TV Show to get started.</h5>
       <div class="search">
         <form method='post' data-remote='true'>
         <input name='_method' type='hidden' value='patch' />
@@ -13,7 +11,7 @@
           <%= text_field_tag :q, "", required: true %>
         </div>
         <div id="search_btn">
-          <%= submit_tag "Search", class: 'btn btn-info btn-xl' %>
+          <%= submit_tag "Search", class: 'btn' %>
         </div>
       <% end %>
     </div>
@@ -22,14 +20,18 @@
 
 <!-- Search results -->
 <% if @movies != nil && @tv_shows != nil %>
-
   <center>
-      <%= select("filter", "category", [["All", 0], ["Movies", 1], ["TV Shows", 2]], {}, onChange: "javascript: onChange(event);") %>
-
-      <h3>Movies</h3>
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs" id="search">
+          <li class="tab col s6"><a class="active" href="#test1">Movies</a></li>
+          <li class="tab col s6"><a href="#test2">TV Shows</a></li>
+        </ul>
+      </div>
+      <div id="test1" class="col s12">
         <% if @movies.blank? %>
           <div class="container">
-            <h3>No matches found. Please try again.<h3>
+            <h4>No matches found. Please try again.<h4>
           </div>
         <% else %>
           <div id="movies" class="row">
@@ -38,15 +40,34 @@
             </div>
           </div>
         <% end %>
-
-      <h3>TV shows </h3>
+      </div>
+      <div id="test2" class="col s12">
         <% if @tv_shows.blank? %>
-            <h3>No matches found. Please try again.<h3>
+            <h4>No matches found. Please try again.<h4>
         <% else %>
           <div class="movies-shows-container" id="tv-shows">
             <%= render partial: "tv_shows/tv_show", collection: @tv_shows %>
           </div>
         <% end %>
-    <% end %>
+      </div>
+    </div>
   </center>
-</div>
+  <% else %>
+  <% unless signed_in? %>
+  <div class="welcome-wrapper">
+    <div class="welcome1">
+      <header>Ever forget you watched something?</header>
+      <p>Maybe not...but maybe you forgot what you thought about it?</p>
+      <span style="font-weight: 500">Well here you can:</span>
+      <ul>
+        <li>Make a note for yourself.</li>
+        <li>Mark down what you rated it and...</li>
+        <li>Where you left off or when you finished watching.</li>
+        <li>You can also make a note others can read.</li>
+      </ul>
+      <br>
+      <center><%= link_to "Sign up", new_user_registration_path, class: 'btn green' %></center>
+    </div>
+  </div>
+  <% end %>
+<% end %>

@@ -18,6 +18,15 @@
  $primary-color: color("blue", "lighten-2") !default;
  @import 'materialize';
 
+.flash-alert {
+  font-weight: normal;
+  border: 5px solid #b71c1c;
+}
+
+.flash-success {
+  font-weight: normal;
+  border: 5px solid #8bc34a;
+}
 
 nav {
   background-color: rgba(0, 55, 64, 0.69);

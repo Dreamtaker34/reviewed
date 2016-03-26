@@ -116,6 +116,28 @@ aside.aside-2 {
     margin-left: -0.75rem;
     margin-right: -0.75rem;
   }
+
+  .detail-signup {
+    color: #898E8F;
+    margin: auto;
+    padding: 10px;
+
+    header {
+      font-size: 14pt;
+      text-align: center;
+      border-bottom: 2px solid;
+    }
+
+    ul {
+      text-align: left;
+      margin: 0px;
+
+      li {
+        margin-left: 18px;
+        list-style-type: square;
+      }
+    }
+  }
 }
 
 @media all and (min-width: 600px) {

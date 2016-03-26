@@ -35,6 +35,7 @@
         <% end %>
       </ul>
       <ul class="side-nav" id="mobile-demo" style="left: -250px;">
+        <li><a href="<%= root_path %>">Reviewed</a></li>
         <li><a href="<%= movies_path %>">Movies</a></li>
         <li><a href="<%= tv_shows_path %>">TV Shows</a></li>
         <li><a href="<%= notes_path %>">My Notes</a></li>
@@ -51,11 +52,11 @@
 
   <div class="container outside-container">
     <% if flash[:notice] %>
-      <script>Materialize.toast("<%= flash[:notice] %>", 4000);</script>
+      <script>Materialize.toast("<%= flash[:notice] %>", 5000, 'flash-success');</script>
     <% elsif flash.now[:alert] %>
-      <script>Materialize.toast("<%= flash[:alert] %>", 4000);</script>
+      <script>Materialize.toast("<%= flash[:alert] %>", 5000, 'flash-alert');</script>
     <% elsif flash[:error] %>
-      <script>Materialize.toast("<%= flash[:error] %>", 4000);</script>
+      <script>Materialize.toast("<%= flash[:error] %>", 5000, 'flash-alert');</script>
     <% end %>
 
     <%= yield %>
