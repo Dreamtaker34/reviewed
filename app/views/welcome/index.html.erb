@@ -20,7 +20,6 @@
 
 <!-- Search results -->
 <% if @movies != nil && @tv_shows != nil %>
-  <center>
     <div class="row">
       <div class="col s12">
         <ul class="tabs" id="search">
@@ -51,7 +50,6 @@
         <% end %>
       </div>
     </div>
-  </center>
   <% else %>
   <% unless signed_in? %>
   <div class="welcome-wrapper">

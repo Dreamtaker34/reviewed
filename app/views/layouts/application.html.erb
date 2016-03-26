@@ -12,8 +12,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-  <!--Import jQuery before materialize.js-->
-
   <nav>
     <div class="nav-wrapper">
       <a href="<%= root_path %>" class="brand-logo center">Reviewed</a>
@@ -38,8 +36,8 @@
         <li><a href="<%= root_path %>">Reviewed</a></li>
         <li><a href="<%= movies_path %>">Movies</a></li>
         <li><a href="<%= tv_shows_path %>">TV Shows</a></li>
-        <li><a href="<%= notes_path %>">My Notes</a></li>
         <% if user_signed_in? %>
+          <li><a href="<%= notes_path %>">My Notes</a></li>
           <li><a href="<%= edit_user_registration_path %>"><span class="glyphicon glyphicon-edit"></span> <%= current_user.email%></a></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
@@ -69,7 +67,7 @@
       <a href="http://www.imdb.com">IMDb</a>
     </div>
     <div class="credits">
-      Information provided by <a href="http://www.themoviedb.org"><img src="https://assets.tmdb.org/images/logos/var_6_0_tmdb-logo-1Line-GreenGradient-Shadow-Bree.png" alt="The Movie Database"></a>
+      Information provided by <a href="http://www.themoviedb.org"><img src="https://assets.tmdb.org/images/logos/var_4_0_tmdb-logo-1Line-Blk-Bree.svg" alt="The Movie Database"></a>
     </div>
   </div>
 </body>

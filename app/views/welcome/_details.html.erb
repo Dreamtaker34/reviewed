@@ -1,11 +1,3 @@
-<script>
-$(document).ready(function(){
-    $("#footer-header").click(function(){
-        $(".shared-note").slideToggle("fast");
-    });
-});
-</script>
-
 <!-- New flex design -->
 <div class="movie_or_tvshow_show">
   <div class="wrapper">
@@ -74,7 +66,9 @@ $(document).ready(function(){
       <div id="footer-header">
         <div id="title">
           <%= @notes.count %> Shared Notes.
-          <br><span id="click">Click to see them. (May contain spoilers)</span>
+          <% unless @notes.count == 0 %>
+            <br><span id="click">Click to see them. (May contain spoilers)</span>
+          <% end %>
         </div>
       </div>
       <div class="shared-note" style="display: none">

@@ -34,13 +34,6 @@ nav {
   border-bottom: 1px solid #090909;
 }
 
-// .navbar {
-//   border-radius: 0px;
-//   background-color: #0A323F;
-//   -webkit-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
-//   -moz-box-shadow: 0px 21px 1px rgba(5,5,5,0.4);
-//   box-shadow: 0px 5px 5px rgba(5,5,5,0.4);
-// }
 body {
   background-image: url("WhiteWeave.png");
   background-size: 100px;
@@ -56,39 +49,7 @@ a {
   color: #BAC5E0;
 }
 
-.banner {
-  color: #898E8F;
-  width: 100%;
-  position: absolute;
-  left: 0;
-}
-
-#bar {
-  padding: 10px;
-  margin: auto;
-  width: 100%;
-  left: 0;
-  position: absolute;
-  background-color: #2E353D;
-  height: auto;
-  -webkit-box-shadow: inset 0px 0px 20px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: inset 0px 0px 20px 2px rgba(0,0,0,0.75);
-  box-shadow: inset 0px 0px 20px 2px rgba(0,0,0,0.75);
-}
-
 // Info Cards
-.box {
-
-    img {
-    max-width: 200px;
-    height: auto;
-  }
-
-  width: 200px; height: 300px;
-  position: relative;
-  background: transparent;
-}
-
 .ribbon {
   position: absolute;
   right: -5px; top: -5px;
@@ -97,6 +58,7 @@ a {
   width: 75px; height: 75px;
   text-align: right;
   left: 200px;
+  pointer-events: none;
 
   span {
     font-size: 10px;
@@ -187,7 +149,6 @@ a {
 
   .card_content_info {
     width: 100%;
-    padding-top: 5px;
     padding-left: 8px;
     padding-right: 8px;
     border-top: 2px solid #BAC5E0;
@@ -216,6 +177,7 @@ a {
 
 // Main Footer
 .main_footer {
+  font-weight: 600;
   width: 100%;
   height: auto;
   margin-top: 50px;
@@ -225,53 +187,27 @@ a {
   clear: both;
 
   .links {
-    color: #898E8F;
     text-align: center;
     font-size: 14px;
 
     a {
-      color: #898E8F;
+      color: inherit;
       text-decoration: underline;
     }
   }
 
   .credits {
-    color: #898E8F;
     text-align: center;
     font-size: 12px;
+    margin-bottom: 9px;
 
     img {
+      position: relative;
+      bottom: -10px;
       width: 150px;
     }
   }
 }
-
-// Nav Tab on Movie Index
-// .nav-tabs {
-//   font-size: 18px;
-//   background-color: #2E353D;
-//
-//   .tab-content {
-//   }
-//
-//   li.active > a,
-//   li.active > a:hover,
-//   li.active > a:focus{
-//             color: #9d9d9d;
-//             background-color: #0A323F;
-//             border-radius: 0;
-//           }
-//   li > a {
-//     color: #9d9d9d;
-//     border-radius: 0;
-//   }
-//
-//   li > a:hover {
-//     background-color: #0A323F !important;
-//       border-radius: 0;
-//       color: #9d9d9d;
-//     }
-// }
 
 .movies-shows-container{
   display: flex;
