@@ -1,3 +1,209 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "materialize/components/color";
+$primary-color: color("blue", "lighten-2") !default;
+@import 'materialize';
+
+.flash-alert {
+ font-weight: normal;
+ border: 5px solid #b71c1c;
+}
+
+.flash-success {
+ font-weight: normal;
+ border: 5px solid #8bc34a;
+}
+
+nav {
+ background-color: rgba(0, 55, 64, 0.69);
+ margin-bottom: 25px;
+ border-bottom: 1px solid #090909;
+}
+
+body {
+ background-image: url("WhiteWeave.png");
+ background-size: 100px;
+ background-attachment: fixed;
+ background-color: #FFFFFF;
+}
+
+h1 {
+ color: #2E353D;
+}
+
+a {
+ color: #BAC5E0;
+}
+
+// Info Cards
+.ribbon {
+ position: absolute;
+ right: -5px; top: -5px;
+ z-index: 1;
+ overflow: hidden;
+ width: 75px; height: 75px;
+ text-align: right;
+ left: 200px;
+ pointer-events: none;
+
+ span {
+   font-size: 10px;
+   font-weight: bold;
+   color: #FFF;
+   text-transform: uppercase;
+   text-align: center;
+   line-height: 20px;
+   transform: rotate(45deg);
+   -webkit-transform: rotate(45deg);
+   width: 100px;
+   display: block;
+   background: #79A70A;
+   background: linear-gradient(#F79E05 0%, #8F5408 100%);
+   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+   position: absolute;
+   top: 19px; right: -21px;
+ }
+
+ span::before {
+   content: "";
+   position: absolute; left: 0px; top: 100%;
+   z-index: -1;
+   border-left: 3px solid #8F5408;
+   border-right: 3px solid transparent;
+   border-bottom: 3px solid transparent;
+   border-top: 3px solid #8F5408;
+ }
+
+ span::after {
+   content: "";
+   position: absolute; right: 0px; top: 100%;
+   z-index: -1;
+   border-left: 3px solid transparent;
+   border-right: 3px solid #8F5408;
+   border-bottom: 3px solid transparent;
+   border-top: 3px solid #8F5408;
+ }
+}
+
+.card_wrapper {
+ position: relative;
+
+ .card {
+   margin: 20px;
+   max-width: 250px;
+   height: 410px;
+   overflow: hidden;
+   background-color: #2E353D;
+   -webkit-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
+   -moz-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
+   box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
+
+   img {
+     padding: 5px;
+     max-width: 250px;
+     height: 370px;
+   }
+ }
+
+ .card_content {
+   color: #BAC5E0;
+   background-color: rgba(255,255,255,0.0);
+   position: relative;
+   bottom: 10px;
+   height: 410px;
+   padding-top: 7px;
+
+   transition: all 1.0s ease;
+ }
+
+ .card_content_header {
+   padding-left: 5px;
+   padding-right: 5px;
+   margin-top: -25px;
+   width: auto;
+   text-align: center;
+
+   h3 {
+     font-size: 17px;
+   }
+ }
+
+ .card_content_year {
+   font-size: 12px;
+   color: #898E8F;
+ }
+
+ .card_content_info {
+   width: 100%;
+   padding-left: 8px;
+   padding-right: 8px;
+   border-top: 2px solid #BAC5E0;
+   position: absolute;
+   top: 50px;
+ }
+
+ .card:hover .card_content {
+   background-color: rgba(0,0,0,0.7);
+   bottom: 375px;
+ }
+
+ .card_content_footer {
+   padding: 6px;
+   font-size: 15pt;
+   width: 100%;
+   height: 40px;
+   position: absolute;
+   top: 318px;
+   left: 0px;
+   text-align: center;
+   background-color: #0A323F;
+ }
+
+}
+
+// Main Footer
+.main_footer {
+ font-weight: 600;
+ width: 100%;
+ height: auto;
+ margin-top: 50px;
+ background-color: rgba(0, 55, 64, 0.69);
+ border-top: 1px solid #090909;
+ padding: 5px;
+ clear: both;
+
+ .links {
+   text-align: center;
+   font-size: 14px;
+
+   a {
+     color: inherit;
+     text-decoration: underline;
+   }
+ }
+
+ .credits {
+   text-align: center;
+   font-size: 12px;
+   margin-bottom: 9px;
+
+   img {
+     position: relative;
+     bottom: -10px;
+     width: 150px;
+   }
+ }
+}
+
+.movies-shows-container{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+}
+
+.outside-container{
+ min-height: calc(100vh - 208px);
+ width: 90%;
+}
