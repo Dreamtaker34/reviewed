@@ -51,6 +51,7 @@ article.main {
     padding: 5px;
     background-color: rgba(0,0,0,0.7);
     height: auto;
+    flex-grow: inherit;
   }
 
   .label {
@@ -125,6 +126,12 @@ aside.aside-2 {
   #label-align {
     margin-left: -0.75rem;
     margin-right: -0.75rem;
+  }
+
+  .range-field {
+    input {
+      border: 0px;
+    }
   }
 
   .detail-signup {

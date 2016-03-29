@@ -2,7 +2,7 @@
 <div class="movie_or_tvshow_show">
   <div class="wrapper">
     <header class="header">
-        <div id="title"><%= name_or_title %> <span id="year">(<%= release_or_first_air_date[0 .. 3] %>)</span></div>
+        <div id="title"><%= name_or_title %> <span id="year"><%= "(#{release_or_first_air_date[0 .. 3]})" if release_or_first_air_date.present? %></span></div>
     </header>
     <aside class="aside aside-1">
       <div id="poster-section">
