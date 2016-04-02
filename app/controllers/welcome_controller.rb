@@ -8,12 +8,17 @@ class WelcomeController < ApplicationController
 
   def search
 
-    Tmdb::Api.key(ENV["movie_db_key"])
-    @movies = Tmdb::Movie.find(params[:q])
-    @tv_shows = Tmdb::TV.find(params[:q])
+    if params[:q] == ""
+      flash[:alert] = "Must not be blank."
+      redirect_to :back
+      
+    else
+      Tmdb::Api.key(ENV["movie_db_key"])
+      @movies = Tmdb::Movie.find(params[:q])
+      @tv_shows = Tmdb::TV.find(params[:q])
 
-    render :index
-
+      render :index
+    end
   end
 
 end
