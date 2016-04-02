@@ -44,10 +44,12 @@ class NotesController < ApplicationController
 
     if @note.save
       flash[:notice] = "You created a note for #{@title}."
-      redirect_to :back
+    elsif @note.errors.present?
+      flash[:alert] = "#{view_context.pluralize(@note.errors.count, 'error')}. Please check Note lengths."
     else
       flash[:alert] = "Failed to write the note."
     end
+    redirect_to :back
   end
 
   def edit
@@ -80,11 +82,12 @@ class NotesController < ApplicationController
 
     if @note.save
       flash[:notice] = "You edited your note for #{@title}."
-      redirect_to :back
+    elsif @note.errors.present?
+      flash[:alert] = "#{view_context.pluralize(@note.errors.count, 'error')}. Please check Note lengths."
     else
       flash[:alert] = "Failed to write the note."
     end
-
+    redirect_to :back
   end
 
   def destroy

@@ -9,7 +9,7 @@
         <% if show_or_movie['poster_path'].blank? %>
           <%= image_tag "no_poster.png" %>
         <% else %>
-          <img src="http://image.tmdb.org/t/p/w342<%= show_or_movie['poster_path'] %>">
+          <img src="https://image.tmdb.org/t/p/w342<%= show_or_movie['poster_path'] %>">
         <% end %>
         <% unless show_or_movie['tagline'].blank? %>
           <div id="tagline">
