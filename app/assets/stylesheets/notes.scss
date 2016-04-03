@@ -129,9 +129,30 @@ aside.aside-2 {
   }
 
   .range-field {
+    margin-top: 6px;
     input {
       border: 0px;
     }
+  }
+
+  .watched {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+
+    .completed {
+      margin-top: 1px;
+    }
+
+    .date-picker {
+      padding-left: 10px;
+      
+      input {
+        max-width: 140px;
+        height: 28px;
+      }
+    }
+
   }
 
   .detail-signup {

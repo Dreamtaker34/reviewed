@@ -15,7 +15,7 @@
       </div>
     </div>
     <!-- Progress -->
-    <div class="row">
+    <div class="row" style="margin-bottom: 0px;">
       <div class="input-field col s12">
         <%= f.text_field :progress, length: 40, type: 'text', autocomplete: 'off' %>
         <label for="input_text">My Progress</label>
@@ -29,14 +29,15 @@
       </p>
     </form>
     <!-- Completed -->
-    <div class="completed col s6">
-      <%= f.check_box :completed, id:"completed" %>
-      <%= f.label "Watched all of it?", for:"completed", id:"completed" %>
-    </div>
-    <!-- Date Completed -->
-    <div class="date-picker col s6">
-      <label for="date_completed">When?</label>
-      <%= f.text_field :date_completed, id: 'date_completed', type: 'date', class: 'datepicker' %>
+    <div class="row watched" style="margin-bottom: 10px;">
+      <div class="completed">
+        <%= f.check_box :completed, id:"completed" %>
+        <%= f.label "Finished it? When?", for:"completed", id:"completed" %>
+      </div>
+      <!-- Date Completed -->
+      <div class="date-picker">
+        <%= f.text_field :date_completed, id: 'date_completed', type: 'date', class: 'datepicker', placeholder: "When?" %>
+      </div>
     </div>
 
   <% if @movie.present? %>
