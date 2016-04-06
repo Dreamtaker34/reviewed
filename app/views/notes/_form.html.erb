@@ -3,7 +3,7 @@
     <!-- Personal -->
     <div class="">
       <div class="input-field col s12">
-        <%= f.text_area :personal, class: 'materialize-textarea', length: 500, type: 'text' %>
+        <%= f.text_area :personal, class: 'materialize-textarea', length: 1000, type: 'text' %>
         <label for="textarea1" id="label-align">My Personal Note</label>
       </div>
     </div>
@@ -24,7 +24,7 @@
     <!-- Rating -->
     <form action="#">
       <p class="range-field">
-        <label for="test5">Rating</label>
+        <label for="test5" style="font-size: 1rem">Rating: <span id="score"><%= @note.rating %></span></label>
         <%= f.text_field :rating, id:'test5', type: 'range', min: 0, max: 10 %>
       </p>
     </form>
@@ -70,3 +70,11 @@
     <% end %>
   </div>
 <% end %>
+
+<script>
+$('#score').each(function(){
+  if($(this).text() <= 3)$(this).css('color','#B55C5C');
+  if($(this).text() >= 4)$(this).css('color','#A98B43');
+  if($(this).text() >= 7)$(this).css('color','#80A943');
+});
+</script>
