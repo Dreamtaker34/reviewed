@@ -11,3 +11,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( no_poster.png )
+Rails.application.config.assets.precompile += %w( Show-Notes-logo_2.png )
