@@ -23,7 +23,7 @@ class Note < ActiveRecord::Base
 
   accepts_nested_attributes_for :movie, :tvshow
 
-  validates :personal, length: { maximum: 1000 }
+  validates :personal, length: { maximum: 10000 }
   validates :shared, length: { maximum: 300 }
   validates :progress, length: { maximum: 40 }
 
